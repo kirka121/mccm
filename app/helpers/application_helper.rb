@@ -1,9 +1,12 @@
 module ApplicationHelper
 
-	def title_helper(suffix)
+	def full_title(suffix)
+		base_title = "MC Countermeasures Inc."
+
 		if suffix.empty?
-			suffix = "Home"
+			base_title
+		else
+			"#{base_title} - #{suffix}"
 		end
-		"MC Countermeasures Inc. - " + suffix
 	end
 end
