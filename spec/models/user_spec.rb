@@ -78,7 +78,7 @@ describe User do
 	end
 
 	describe "when password is blank" do
-		before { @user = User.new(name: "tester", email:"tester@tester.com", password: " ", password_confirmation: " ") }
+		before { @user = User.new(name: "tester", email: "tester@tester.com", password: " ", password_confirmation: " ") }
 		it { should_not be_valid }
 	end
 
