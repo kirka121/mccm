@@ -1,15 +1,37 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<%
+title = yield(:title)
+%>
+
+<header class="navbar navbar-static-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "logo", '/', id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", home_path %></li>
-          <li><%= link_to "Help", help_path %></li>
-          <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "Register", register_path %></li>
-        </ul>
-      </nav>
+      	<table id="KA_header_container">
+      		<tr>
+      			<td>
+      				<table id="KA_header_inner_container">
+      					<tr>
+      						<td id="header_logo_container"><%= link_to image_tag("logo.png",width: '250'), '/', id: "logo" %></td>
+      						<td id="header_content">Global EW Solutions by<br><span id="header_content_description">MC Countermeasures Inc.</span></td>
+      					</tr>
+      				</table>
+      			</td>
+      		</tr>
+      		<tr>
+	      		<td id="header_container_menu_links">
+	        		<ul class="nav nav-tabs">
+			          	<li <%= if title == "Home" then "class=active" end%>><%= link_to "Home", home_path %></li>
+			          	<li <%= if title == "Register" then "class=active" end%>><%= link_to "Register", register_path %></li>
+			          	<li <%= if title == "Videos" then "class=active" end%>><%= link_to "Videos", videos_path %></li>
+			          	<li <%= if title == "Results" then "class=active" end%>><%= link_to "Results", results_path %></li>
+			          	<li <%= if title == "Presentations" then "class=active" end%>><%= link_to "Presentations", presentations_path %></li>
+			          	<li <%= if title == "Papers" then "class=active" end%>><%= link_to "Papers", papers_path %></li>
+			          	<li <%= if title == "Help" then "class=active" end%>><%= link_to "Help", help_path %></li>
+			          	<li <%= if title == "About" then "class=active" end%>><%= link_to "About", about_path %></li>
+			          	<li <%= if title == "Login" then "class=active" end%> style="float: right;"><%= link_to "Login", register_path %></li>
+	        		</ul>
+	        	</td>
+	      	</tr>
+      	</table>
     </div>
   </div>
 </header>

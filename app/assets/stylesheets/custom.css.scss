@@ -1,7 +1,5 @@
 @import "bootstrap";
 
-/* universal */
-/* mixins */
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -9,13 +7,29 @@
 }
 html {
   overflow-y: scroll;
+  height: 100%;
 }
 
 body {
   color: black;
-  background: #999;
+  background: #525252;
+  height: 100%;
+  font-family: Calibri;
 }
 
+#wrap{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -100px;
+}
+#footer{
+	height: 55px;
+	display: block;
+}
+#push{
+	height: 55px;
+}
 section {
   overflow: auto;
 }
@@ -77,14 +91,9 @@ p {
   text-decoration: none;
 }
 
-#main_application_container{
-	padding-top: 70px;
-}
-
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid black;
   color: grey;
   a {
     color: blue;
@@ -111,4 +120,50 @@ footer {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+#KA_header_container{
+  	width: 940px;
+  	border-spacing: 0px;
+  	border: 0px;
+  	#header_container_menu_links{
+  		
+  	}
+  	ul{
+  		width:100%;
+  	}
+  	.nav-tabs{
+  		border-bottom: 1px solid #e1203b;
+  	}
+  	.nav-tabs > .active > a{
+  		border: 1px solid #e1203b;
+  		border-bottom-color: transparent;
+  	}
+  	.nav-tabs > li > a{
+  		border-bottom-color: transparent;
+  	}
+  	.nav-tabs > li > a:hover{
+  		border: 1px solid #e1203b;
+  		border-bottom-color: transparent;
+  	}
+}
+#KA_header_inner_container{
+
+  	#header_logo_contrainer{
+  		width: 250px;
+  	}
+  	#header_content{
+    	width: 700px;
+    	color: white;
+    	text-align: right;
+    	vertical-align: bottom;
+  	}
+  	#header_content_description{
+  		font-size: 18px;
+  		font-weight: bold;
+  	}
+
+}
+.navbar-inner{
+	margin: 0 auto;
 }
