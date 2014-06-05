@@ -1,0 +1,72 @@
+<div class="border">
+	<table id="menu_user_logged_in_img">
+		<tr>
+			<td>
+				<%= gravatar_for @user %>
+			</td>
+		</tr>
+	</table>
+</div>
+<table id="menu_user_logged_in_info">
+	<tr>
+		<th colspan="100%">
+			<%= @user.name %>
+		</th>
+	</tr>
+	<tr>
+		<td colspan="100%" class="username">
+			<%= @user.name %>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="100%">
+			<hr/>
+		</td>
+	</tr>
+	<tr>
+		<td class="bullet"><%= image_tag("icon-company.png",width: '20') %></td>
+		<td class="description"><%= @user.name %></td>
+	</tr>
+	<tr>
+		<td class="bullet"><%= image_tag("icon-location.png",width: '20') %></td>
+		<td class="description"><%= @user.name %></td>
+	</tr>
+	<tr>
+		<td class="bullet"><%= image_tag("icon-email.png",width: '20') %></td>
+		<td class="description"><a href="<%= @user.name %>"><%= @user.email %></a></td>
+	</tr>
+	<tr>
+		<td class="bullet"><%= image_tag("icon-url.png",width: '20') %></td>
+		<td class="description"><a href="<%= @user.name %>" target="_blank"><%= @user.email %></a></td>
+	</tr>
+	<tr>
+		<td class="bullet"><%= image_tag("icon-member.png",width: '20') %></td>
+		<td class="description">Joined on <%= @user.created_at %></td>
+	</tr>
+	<tr>
+		<td colspan="100%">
+			<hr/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="100%">
+			<table id="menu_user_logged_in_stats">
+				<tr>
+					<th>0</th>
+					<th>0</th>
+					<th>$0</th>
+				</tr>
+				<tr>
+					<td>Gigs Posted</td>
+					<td>Gigs Ran</td>
+					<td>Withdrawn</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="100%">
+			<hr/>
+		</td>
+	</tr>
+</table>

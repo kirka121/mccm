@@ -1,0 +1,13 @@
+<% provide(:title, "Login") %>
+
+<h1>Login</h1>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+	<%= f.text_field(:email, :placeholder => "Email", :class => 'register_user_input') %>
+
+	<%= f.password_field :password, :placeholder => "Password", :class => 'register_user_input' %>
+
+	<%= f.submit "Login", class: "btn" %>
+<% end %>
+
+<p>new user? please <%= link_to "register.", register_path %></p>

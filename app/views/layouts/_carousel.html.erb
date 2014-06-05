@@ -1,9 +1,17 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item"><%= image_tag("carousel/1.jpg") %></div>
-    <div class="item"><%= image_tag("carousel/2.jpg") %></div>
-    <div class="item"><%= image_tag("carousel/3.jpg") %></div>
-    <div class="item"><%= image_tag("carousel/4.jpg") %></div>
-  </div>
-</div>
+<script type="text/javascript">
+	var carousel_images = new Array();
+	carousel_images[0] = "/assets/carousel/1.jpg";
+	carousel_images[1] = "/assets/carousel/2.jpg";
+	carousel_images[2] = "/assets/carousel/3.jpg";
+	carousel_images[3] = "/assets/carousel/4.jpg";
+	
+	$(window).load(function() {
+		$("#photo_container").isc({
+			imgArray: carousel_images,
+			autoplay: true,
+			autoplayTimer: 5000
+		});	
+	});
+</script>
+
+<div id="photo_container"></div> 

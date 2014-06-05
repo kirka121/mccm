@@ -1,13 +1,16 @@
 <footer class="footer">
-  <small>
-    <a href="#">some link</a>
-    by Kirill Afanasenko
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "Help",   help_path %></li>
-      <li><%= link_to "About", about_path %></li>
-      <li><a href="#">just a link</a></li>
-    </ul>
-  </nav>
+  <table id="footer_table">
+  	<tr>
+  		<td id="first">
+  			<%= link_to "Home",   help_path %> | 
+  			<%= link_to "Rand",   help_path %>
+  		</td>
+  		<td id="second"><small><%= yield_copyright %></small></td>
+  		<td id="third">
+	  		<%= link_to "Help",   help_path %> | 
+		    <%= link_to "About", about_path %> | 
+		   	<%= link_to "Done",   help_path %>
+		</td>
+  	</tr>
+  </table>
 </footer>

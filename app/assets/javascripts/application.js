@@ -12,5 +12,53 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+//custom js for home page functionality.
+(function ($) {
+    $.fn.showHide2 = function (options) {
+
+		//default vars for the plugin
+        var defaults = {
+            speed: 1000,
+			easing: '',
+			changeText: 0,
+			showText: 'Show',
+			hideText: 'Hide'
+        };
+
+        var options = $.extend(defaults, options);
+
+        $(this).click(function () {	
+           
+             $('.toggleDiv').slideUp(options.speed, options.easing);	
+			 // this var stores which button you've clicked
+             var toggleClick = $(this);
+
+		     // this reads the rel attribute of the button to determine which div id to toggle
+		     var toggleDiv = $(this).attr('rel');
+
+		     // here we toggle show/hide the correct div at the right speed and using which easing effect
+		     $(toggleDiv).slideToggle(options.speed, options.easing, function() {
+
+		     // this only fires once the animation is completed
+			 if(options.changeText==1){
+		     	$(toggleDiv).is(":visible") ? $("#overview_header[rel="+toggleDiv+"] img.arrow").attr('src', '/assets/images/arrow-up.png') : $("#overview_header[rel="+toggleDiv+"] img.arrow").attr('src', '/assets/images/arrow-down.png');
+		     }
+        });
+		   
+		  return false; 	   
+        });
+    };
+})(jQuery);
+
+$(function(){
+   $('.show_hide2').showHide2({			 
+		speed: 500,  // speed you want the toggle to happen	
+		changeText: 1, // if you dont want the button text to change, set this to 0
+		showText: 'Login / Register',// the button text to show when a div is closed
+		hideText: 'Login / Register' // the button text to show when a div is open				 
+	}); 
+});

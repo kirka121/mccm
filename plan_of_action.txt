@@ -1,0 +1,50 @@
+------------------------------
+-- requirements for website --
+------------------------------
+
+
+- home page
+	- what we are
+	- what we do
+	- short product description
+	- news letters
+
+- register
+	- allows for users to sign up for news letters and communicate with the MCCM staff
+
+- videos
+	- show videos of products and members
+
+- results
+	- idk
+
+- presentations
+	- links to power points
+
+- papers
+	- links to papers
+
+- help
+	- short FAQ
+
+- About
+	- becomes into contact
+
+- login
+	- allows to login
+	- allows to communciate with staff
+	- request price quotation etc
+
+- admin
+	- can make users admins
+	- if user is admin:
+		- can send out mass email to all the registered users / or specifically selected users
+	- can delete users
+	- can answer requests
+	- can publish videos, pictures, stories etc.
+
+-------
+-DONE:-
+-------
+-- login logout functionality
+-- full error reporting

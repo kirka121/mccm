@@ -1,3 +1,230 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+input.register_user_input{
+  height: 40px;
+  width: 170px;
+  padding: 5px;
+}
+
+.login_form{
+	margin-left: auto;
+	margin-right: auto;
+	width: 870px;
+}
+
+div.field_with_errors{
+	border: 1px solid red;
+	display: inline;
+	padding-top: 12px;
+	padding-bottom: 13px;
+}
+
+.form_errors{
+	font: 13px Helvetica, arial, freesans, clean, sans-serif;
+	background-repeat: repeat-x;
+	border: 1px solid #da9797;
+	padding: 10px;
+	background-color: #efd0d0;
+	border-radius: 3px;
+	text-shadow: none;
+	color: #911;
+    margin-bottom: 20px;
+    width: 940px;
+    margin-left: -14px;
+}
+
+.form_success{
+	font: 13px Helvetica, arial, freesans, clean, sans-serif;
+	background-repeat: repeat-x;
+	border: 1px solid #97c1da;
+	padding: 10px;
+	background-color: #d0e3ef;
+	border-radius: 3px;
+	text-shadow: none;
+	color: #264c72;
+    margin-bottom: 20px;
+    width: 940px;
+    margin-left: -14px;
+}
+
+.border{
+   border: 3px solid #ddddde; 
+}
+
+#active_link{
+    border-left: 2px solid #86a5e9;
+}
+#menu{
+    border: 1px solid #b0b1b1;
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+#menu th{
+    height: 50px;
+    color: #000000;
+    background-image: -webkit-linear-gradient(bottom, rgb(207,230,230) 28%, rgb(227,235,254) 64%);
+    background-color: rgb(207,230,230);
+}
+
+#menu td{
+    border-top: 1px solid #c2c2c3;
+}
+.link{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+.link:hover{
+    background-color: #e3ebfe;
+}
+.picture{
+    width: 50px;
+}
+
+.picture img{
+    width: 50px;
+    height: 50px;
+}
+.username{
+    text-align: left;
+}
+.border{
+   border: 3px solid #ddddde; 
+}
+#active_link{
+    border-left: 2px solid #86a5e9;
+}
+#menu_user_logged_in_img{
+    border: 1px solid #b0b1b1;
+    width: 100%;
+    border-spacing: 0px;
+}
+
+#menu_user_logged_in_img td{
+    height: 190px;
+    width: 190px;
+    padding: 1px;
+    border-spacing: 0px;
+    display: block;
+}
+
+#menu_user_logged_in_img img{
+    height: 190px;
+    width: 190px
+}
+
+#menu_user_logged_in_info{
+    border: none;
+    width: 100%;
+}
+
+#menu_user_logged_in_info th{
+    font-size: 25px;
+    text-align: left;
+}
+
+#menu_user_logged_in_info td.username{
+    font-size: 22px;
+    color: #383f4e;
+}
+
+#menu_user_logged_in_info td.bullet{;
+    width: 20px;
+}
+
+#menu_user_logged_in_info td.bullet img{;
+    width: 20px;
+    height: 20px;
+}
+
+#menu_user_logged_in_info td.description{
+    font-size: 16px;
+}
+
+#menu_user_logged_in_stats{
+    width: 100%;
+    border-spacing: 0px
+}
+
+#menu_user_logged_in_stats th{
+    font-size: 28px;
+}
+
+#menu_user_logged_in_stats td{
+    font-size: 11px;
+}
+
+#menu_user_logged_out{
+    border: 1px solid #b0b1b1;
+    width: 100%;
+    border-spacing: 0px;
+}
+
+#menu_user_logged_out td{
+    height: 190px;
+    width: 190px;
+    padding: 1px;
+    border-spacing: 0px;
+    display: block;
+}
+
+.cp_container_left{
+	width: 200px;
+	margin-right: 20px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.cp_container_right{
+	display: inline-block;
+	width: 200px;
+	text-align: left;
+}
+
+
+#overview_container{
+	padding: 5px;
+}
+
+#overview_header{
+	padding: 5px;
+	font-size: 18px;
+	margin-top: 20px;
+	-webkit-transition: background-color 0.6s ease;
+    -moz-transition: background-color 0.6s ease;
+    -o-transition: background-color 0.6s ease;
+    transition: background-color 0.6s ease;
+}
+
+#overview_header img{
+	width: 30px;
+	height: 30px;
+	vertical-align:middle;
+}
+
+#overview_header img.arrow{
+	width: 20px;
+	height: 20px;
+}
+
+#overview_header:hover{
+	background-color: rgba(0,0,0,0.3);
+	-webkit-transition: background-color 0.6s ease;
+    -moz-transition: background-color 0.6s ease;
+    -o-transition: background-color 0.6s ease;
+    transition: background-color 0.6s ease;
+}
+
+#slider1, #slider2, #slider3{
+	margin-left: 25px;
+	padding: 5px;
+    width: 95%;
+    display: none;
+    position: relative; 
+    text-align: center;
+    text-align: left;
+} 

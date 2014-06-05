@@ -1,5 +1,26 @@
 <%= provide(:title, "Register") %>
 
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-Register
+
+<h1>Register</h1>
+
+<p>As a member of the MCCM community you will benefit from:</p>
+
+<ul>
+	<li>Receive updates on upcoming projects.</li>
+	<li>Communicate with MCCM staff directly for inqueries.</li>
+	<li>etc, etc.</li>
+</ul>
+
+<div class="login_form">
+	<%= form_for(@user) do |f| %>
+		<%= f.text_field(:name, :placeholder => "First Name", :class => 'register_user_input') %>
+
+		<%= f.text_field :email, :placeholder => "Last Name", :class => 'register_user_input' %>
+
+		<%= f.password_field :password, :placeholder => "Password", :class => 'register_user_input' %>
+
+		<%= f.password_field :password_confirmation, :placeholder => "Confirmation", :class => 'register_user_input' %>
+
+		<%= f.submit "Create my account", class: "btn" %>
+	<% end %>
+</div>

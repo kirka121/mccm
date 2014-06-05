@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127204653) do
+ActiveRecord::Schema.define(version: 20140605185754) do
+
+  create_table "settings", force: true do |t|
+    t.string   "title"
+    t.string   "copyright"
+    t.integer  "carousel_mode"
+    t.integer  "registration_mode"
+    t.integer  "contactus_mode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -19,8 +29,11 @@ ActiveRecord::Schema.define(version: 20140127204653) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "remember_token"
+    t.integer  "admin_level"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end

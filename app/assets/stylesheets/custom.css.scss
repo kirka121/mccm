@@ -5,6 +5,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 html {
   overflow-y: scroll;
   height: 100%;
@@ -12,7 +13,7 @@ html {
 
 body {
   color: black;
-  background: #525252;
+  background: #bfbcbc;
   height: 100%;
   font-family: Calibri;
 }
@@ -26,6 +27,7 @@ body {
 #footer{
 	height: 55px;
 	display: block;
+  background-color: #1b1b1b;
 }
 #push{
 	height: 55px;
@@ -91,26 +93,40 @@ p {
   text-decoration: none;
 }
 
-footer {
+footer.footer {
   margin-top: 45px;
   padding-top: 5px;
+
   color: grey;
   a {
-    color: blue;
+    color: grey;
     &:hover {
-      color: yellow;
+      color: #428bca;
     }
   }
   small {
-    float: left;
+    float: center;
   }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 10px;
-    }
+}
+
+table#footer_table{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 14px;
+
+  td#first{
+    font-weight: 24px;
+    width: 20%;
+    padding-left: 20px;
+  }
+  td#second{
+    width: 60%;
+    text-align: center;
+  }
+  td#third{
+    text-align: right;
+    width: 20%;
+    padding-right: 20px;
   }
 }
 
@@ -123,12 +139,12 @@ footer {
 }
 
 #KA_header_container{
+    margin-left: auto;
+    margin-right: auto;
   	width: 940px;
   	border-spacing: 0px;
   	border: 0px;
-  	#header_container_menu_links{
-  		
-  	}
+
   	ul{
   		width:100%;
   	}
@@ -136,13 +152,16 @@ footer {
   		border-bottom: 1px solid #e1203b;
   	}
   	.nav-tabs > .active > a{
+      background: black;
   		border: 1px solid #e1203b;
   		border-bottom-color: transparent;
+      color: #428bca;
   	}
   	.nav-tabs > li > a{
   		border-bottom-color: transparent;
   	}
   	.nav-tabs > li > a:hover{
+      background: black;
   		border: 1px solid #e1203b;
   		border-bottom-color: transparent;
   	}
@@ -162,8 +181,103 @@ footer {
   		font-size: 18px;
   		font-weight: bold;
   	}
-
 }
 .navbar-inner{
 	margin: 0 auto;
+}
+#photo_container{
+  width: 940px;
+  height: 300px;
+}
+
+.gravatar{
+  border: 3px solid white;
+}
+
+.content_wrapper{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #8b8989;
+
+  border-radius: 5px;
+  @include box_sizing;
+
+  .internal_content_wrapper{
+    margin: 10px;
+  }
+}
+
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+/* sidebar */
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid #8b8989;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+#main_application_container{
+  width: 940px;
+}
+#photo_container{
+  margin-left: -16px;
+}
+
+#kirkontainer{
+  position: relative;
+  background-color: white;
+  width: 940px;
+  margin: 0px auto;
+  border-radius: 10px;
+  border: 2px solid white;
+  margin-left: -16px;
+  margin-top: 20px;
+}
+#kirkontainer_padding{
+  padding: 20px;
+}
+#kirkontainer_header{
+  color: #ffffff;
+  background-color: #000000;
+  height: 40px;
+  margin-top: 0px;
+  text-transform: uppercase;
+  overflow: hidden;
+  padding-left: 20px;
+  font-size: small;
+  line-height: 3.0;
+  -webkit-border-radius: 8px 8px 0px 0px;
+  -moz-border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0px 0px;  
 }

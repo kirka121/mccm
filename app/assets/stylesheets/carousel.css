@@ -1,0 +1,46 @@
+
+.internal_swipe_container {
+  position: relative;
+}
+
+.trans {
+  filter:alpha(opacity=75);
+  -moz-opacity:0.75;
+  -khtml-opacity: 0.75;
+  opacity: 0.75;
+}
+
+.jq_swipe_image {
+  background: url('assets/images/loader.gif') no-repeat center center;
+  
+}
+
+#count_container {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: pink;
+  height: 6px;
+  list-style: none;
+}
+
+.counter {
+  float: left;
+  height: 6px;
+  background-color: #FFFFFF;
+  z-index: 200;
+  height: 6px;
+  padding: 0;
+  margin: 0;
+}
+
+.counter:hover {
+  cursor: pointer;
+  background-color: #e1203b !important;
+}
+
+.current {
+  background-color: #e1203b !important;
+}
