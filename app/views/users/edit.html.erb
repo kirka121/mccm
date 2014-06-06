@@ -1,0 +1,45 @@
+<% provide(:title, "Edit user") %>
+
+
+<% 
+if @page != nil
+	provide(:title, "Control panel > " + @user.name + " > Admin Panel " + " > " + @page.sub('_', ' ')) 
+else
+	provide(:title, "Control panel > " + @user.name + " > Update profile")
+end
+%>
+
+<div class="cp_wholecontainer">
+	<div class="cp_container_left">
+		<% @onpage ='edit' %>
+		<%= render 'user_subpages/menu' %>
+	</div>
+	<div class="cp_container_right">
+		<%= form_for(@user) do |f| %>
+			<table class="information_edit_form">
+				<tr>
+					<th colspan='2'><h3>Update profile</h3></th>
+				</tr>
+				<tr>
+					<td class="label">Name:</td>
+					<td class="textfield"><%= f.text_field :name %></td>
+				</tr>
+				<tr>
+					<td class="label">Email:</td>
+					<td class="textfield"><%= f.text_field :email %></td>
+				</tr>
+				<tr>
+					<td class="label">Password:</td>
+					<td class="textfield"><%= f.password_field :password %></td>
+				</tr>
+				<tr>
+					<td class="label">Confirm:</td>
+					<td class="textfield"><%= f.password_field :password_confirmation %></td>
+				</tr>
+				<tr>
+					<td colspan='2' class="button"> <%= f.submit "Save changes", class: "btn btn-default btn-lg btn-block" %> </td>
+				</tr>
+			</table>
+			<% end %>
+	</div>
+</div>

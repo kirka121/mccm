@@ -5,7 +5,7 @@
 </script>
 
 <div class="edit_form">
-	<%= form_for @page do |f| %>
+	<%= form_for @news, users_path do |f| %>
 		<%= f.label :title, "Title: " %>
 		<%= f.text_field :title, :class=> 'edit_form_title' %>
 		<br/>

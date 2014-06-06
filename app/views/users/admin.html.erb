@@ -19,11 +19,12 @@
 					<td><%= link_to "?page=index" do %><div <% if (@page != nil && @page=='index') %> id="active" <% end %> >index</div><% end %></td>
 					<td><%= link_to "?page=news" do %><div <% if (@page != nil && @page=='news') %> id="active" <% end %> >news</div><% end %></td>
 					<td><%= link_to "?page=settings" do %><div <% if (@page != nil && @page=='settings') %> id="active" <% end %> >settings</div><% end %></td>
-					<td><%= link_to "?page=test" do %><div <% if (@page != nil && @page=='test') %> id="active" <% end %> >test</div><% end %></td>
+					<td><%= link_to "?page=test" do %><div <% if (@page != nil && @page=='users') %> id="active" <% end %> >users</div><% end %></td>
 					<td><%= link_to "?page=test2" do %><div <% if (@page != nil && @page=='test2') %> id="active" <% end %> >test2</div><% end %></td>
 					<td><%= link_to "?page=test3" do %><div <% if (@page != nil && @page=='test3') %> id="active" <% end %> >test3</div><% end %></td>
 				</tr>
 			</table>
+			
 			<div class="margin">
 				<%= 
 					if @page != nil 

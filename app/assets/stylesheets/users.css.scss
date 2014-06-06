@@ -15,10 +15,9 @@ input.register_user_input{
 }
 
 div.field_with_errors{
-	border: 1px solid red;
-	display: inline;
-	padding-top: 12px;
-	padding-bottom: 13px;
+	border: 1px dotted red;
+    width: inherit;
+    display: inline-block;
 }
 
 .form_errors{
@@ -264,6 +263,25 @@ table.admin_panel_news_table{
     td{
         padding-left: 5px;
         border-bottom: 1px dotted gray;
+    }
+}
+
+table.information_edit_form{
+    width: 100%;
+    td.label{
+        width: 200px;
+        color: black;
+        font-size: 14px;
+    }
+    td.textfield{
+        width: 600px;
+        input{
+            width: 100%;
+        }
+        padding-bottom: 10px;
+    }
+    td.button{
+        padding-top: 10px;
     }
 }
 
