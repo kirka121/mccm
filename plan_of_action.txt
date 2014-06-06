@@ -2,7 +2,6 @@
 -- requirements for website --
 ------------------------------
 
-
 - home page
 	- what we are
 	- what we do

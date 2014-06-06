@@ -1,10 +1,9 @@
 <script>
 	function render_partial() {
-	  $('#myeditform').html('<%=j render :partial => "users/admin_subpages/news_create" %>');
+	  $('#myeditform').html('<%=j render :partial => "users/admin_subpages/news_edit" %>');
 	  $('#create_news_button').hide();
 	}
 </script>
-
 
 <table class="admin_panel_news_table">
 	<tr>
@@ -26,7 +25,7 @@
 				<td><%= n.title %></td>
 				<td><%= n.author %></td>
 				<td><%= n.created_at %></td>
-				<td><%= link_to "edit", "edit" %></td>
+				<td><%= link_to "edit", "#", :onclick => "render_partial();" %></td>
 				<td><%= link_to "delete", "delete" %></td>
 			</tr>
 	<% end %>

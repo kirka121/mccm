@@ -1,5 +1,0 @@
-Creating the MCCM website from scratch using Ruby on Rails and adding custom functionality.
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

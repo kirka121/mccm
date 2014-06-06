@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	$('.ckeditor').ckeditor({
+	  // optional config
+	});
+</script>
+
+<div class="edit_form">
+	<%= form_for @news do |f| %>
+		<%= f.label :title, "Title: " %>
+		<%= f.text_field :title, :class=> 'edit_form_title' %>
+		<br/>
+		<br/>
+	  	<%= f.text_area :content, :class => 'ckeditor' %>
+	  	<br/>
+	  	<%= f.submit "Save", class: "btn btn-default btn-lg btn-block" %>
+	<% end %>
+</div>
