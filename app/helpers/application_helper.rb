@@ -1,4 +1,5 @@
 module ApplicationHelper
+	
 	def full_title(suffix)
 		base_title = Settings.find(1).title.html_safe
 

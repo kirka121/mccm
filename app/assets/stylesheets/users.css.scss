@@ -181,7 +181,7 @@ div.field_with_errors{
 
 .cp_container_right{
 	display: inline-block;
-	width: 200px;
+	width: 660px;
 	text-align: left;
 }
 
@@ -198,12 +198,20 @@ div.field_with_errors{
     -moz-transition: background-color 0.6s ease;
     -o-transition: background-color 0.6s ease;
     transition: background-color 0.6s ease;
+    display: inline-block;
+    width:100%;
+}
+
+#overview_header_title{
+    display: inline-block;
+    float: right;
+    font-size: 14px;
 }
 
 #overview_header img{
 	width: 30px;
 	height: 30px;
-	vertical-align:middle;
+	vertical-align: middle;
 }
 
 #overview_header img.arrow{
@@ -228,3 +236,46 @@ div.field_with_errors{
     text-align: center;
     text-align: left;
 } 
+
+table.admin_panel_links{
+    width:100%;    
+    td{ 
+        width: 16.6%;
+        border-left: 1px solid black;
+        text-align: center;
+        border-right: 1px solid black;
+    }
+    td:hover{
+        background-color: #e3ebfe;
+    }
+    td div#active{
+        background-color: #e3ebfe;
+        text-decoration: underline;
+    }
+}
+
+table.admin_panel_news_table{
+    width: 100%;
+    th{
+        border-left: 1px solid black;
+        padding-left: 5px;
+        border-right: 1px solid black;
+    }
+    td{
+        padding-left: 5px;
+        border-bottom: 1px dotted gray;
+    }
+}
+
+div.margin{
+    margin-top: 20px;
+}
+
+div.edit_form{
+    width:100%;
+    text-align: left;
+}
+
+input.edit_form_title{
+    width: 620px;
+}   

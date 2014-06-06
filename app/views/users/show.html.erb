@@ -8,32 +8,13 @@ end
 
 <div class="cp_wholecontainer">
 	<div class="cp_container_left">
-		<table id="menu">
-			<tr>
-				<th class="picture"><%= gravatar_for @user %></th>
-				<th class="username"><%= @user.name %></th>
-			</tr>
-				<tr><td colspan="100%"><%= link_to "?page=profile", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='profile') %> id="active_link" <% end %> > > Profile </div><% end %></td></tr>
-				<tr><td colspan="100%"><%= link_to "?page=account_settings", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='account_settings') %> id="active_link" <% end %> > > Account Settings </div><% end %></td></tr>
-				<tr><td colspan="100%"><%= link_to "?page=email", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='email') %> id="active_link" <% end %>> > Email </div><% end %></td></tr>
-				<tr><td colspan="100%"><%= link_to "?page=notification_center", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='notification_center') %> id="active_link" <% end %>> > Notification Center </div><% end %></td></tr>
-				<tr><td colspan="100%"><%= link_to "?page=billing", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='billing') %> id="active_link" <% end %>> > Billing </div><% end %></td></tr>
-				<tr><td colspan="100%"><%= link_to "?page=history", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='history') %> id="active_link" <% end %>> > Payment History </div><% end %></td></tr>
-				
-				<% if current_user.admin_level == 1 %>
-					<tr><td colspan="100%"><%= link_to "?page=admin_panel", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='admin_panel') %> id="active_link" <% end %>> > Admin Panel </div><% end %></td></tr>
-				<% end %>
-
-				<tr><td colspan="100%">
-					<a data-method="delete" href="/signout" rel="nofollow"><div class="link"> > Log out </div></a>
-				</td></tr>
-		</table>
+		<%= render 'user_subpages/menu' %>
 	</div>
 	<div class="cp_container_right">
 		<%= 
 			if @page != nil 
-				if File.exists?(Rails.root.to_s+"/app/views/user/_"+@page+".html.erb")
-					render "user/"+@page
+				if File.exists?(Rails.root.to_s+"/app/views/user_subpages/_"+@page+".html.erb")
+					render "user_subpages/"+@page
 				else
 					"This module does not exist. Please contact the administrator."
 				end

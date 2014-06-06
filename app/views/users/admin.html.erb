@@ -1,0 +1,40 @@
+<% if current_user.admin_level != 1 %>
+	get the fuck out
+<% else %>
+	<% 
+	if @page != nil
+		provide(:title, "Control panel > " + @user.name + " > Admin Panel " + " > " + @page.sub('_', ' ')) 
+	else
+		provide(:title, "Control panel > " + @user.name + " > Admin Panel ")
+	end
+	%>
+
+	<div class="cp_wholecontainer">
+		<div class="cp_container_left">
+			<%= render 'user_subpages/menu' %>
+		</div>
+		<div class="cp_container_right">
+			<table class="admin_panel_links">
+				<tr>
+					<td><%= link_to "?page=index" do %><div <% if (@page != nil && @page=='index') %> id="active" <% end %> >index</div><% end %></td>
+					<td><%= link_to "?page=news" do %><div <% if (@page != nil && @page=='news') %> id="active" <% end %> >news</div><% end %></td>
+					<td><%= link_to "?page=settings" do %><div <% if (@page != nil && @page=='settings') %> id="active" <% end %> >settings</div><% end %></td>
+					<td><%= link_to "?page=test" do %><div <% if (@page != nil && @page=='test') %> id="active" <% end %> >test</div><% end %></td>
+					<td><%= link_to "?page=test2" do %><div <% if (@page != nil && @page=='test2') %> id="active" <% end %> >test2</div><% end %></td>
+					<td><%= link_to "?page=test3" do %><div <% if (@page != nil && @page=='test3') %> id="active" <% end %> >test3</div><% end %></td>
+				</tr>
+			</table>
+			<div class="margin">
+				<%= 
+					if @page != nil 
+						if File.exists?(Rails.root.to_s+"/app/views/users/admin_subpages/_"+@page+".html.erb")
+							render "users/admin_subpages/"+@page
+						else
+							"This module does not exist. Please contact the administrator."
+						end
+					end 
+				%>
+			</div>
+		</div>
+	</div>
+<% end %>

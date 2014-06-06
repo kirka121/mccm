@@ -1,0 +1,20 @@
+<table id="menu">
+	<tr>
+		<th class="picture"><%= gravatar_for @user %></th>
+		<th class="username"><%= @user.name %></th>
+	</tr>
+		<tr><td colspan="100%"><%= link_to "/users/" + current_user.id.to_s + "?page=profile", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='profile') %> id="active_link" <% end %> > > Profile </div><% end %></td></tr>
+		<tr><td colspan="100%"><%= link_to "/users/" + current_user.id.to_s + "?page=account_settings", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='account_settings') %> id="active_link" <% end %> > > Account Settings </div><% end %></td></tr>
+		<tr><td colspan="100%"><%= link_to "/users/" + current_user.id.to_s + "?page=email", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='email') %> id="active_link" <% end %>> > Email </div><% end %></td></tr>
+		<tr><td colspan="100%"><%= link_to "/users/" + current_user.id.to_s + "?page=notification_center", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='notification_center') %> id="active_link" <% end %>> > Notification Center </div><% end %></td></tr>
+		<tr><td colspan="100%"><%= link_to "/users/" + current_user.id.to_s + "?page=billing", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='billing') %> id="active_link" <% end %>> > Billing </div><% end %></td></tr>
+		<tr><td colspan="100%"><%= link_to "/users/" + current_user.id.to_s + "?page=history", :class => 'inner_link' do %><div class="link" <% if (@page != nil && @page=='history') %> id="active_link" <% end %>> > Payment History </div><% end %></td></tr>
+
+		<% if current_user.admin_level == 1 %>
+			<tr><td colspan="100%"><%= link_to "/users/admin_subpages/page", :class => 'inner_link' do %><div class="link" <% if (request.fullpath.include? "/users/admin_subpages/page") %> id="active_link" <% end %>> > Admin Panel </div><% end %></td></tr>
+		<% end %>
+
+		<tr><td colspan="100%">
+			<a data-method="delete" href="/signout" rel="nofollow"><div class="link"> > Log out </div></a>
+		</td></tr>
+</table>

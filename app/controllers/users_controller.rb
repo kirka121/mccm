@@ -38,6 +38,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def admin
+    if params[:page] != nil
+      @page = params[:page]
+    end
+
+    if(signed_in?)
+      @user = User.find(current_user.id)
+    else
+      flash[:form_errors] = "You must be logged in or admin to view users"
+      redirect_to '/home'
+    end
+  end
+
   private 
 	  def user_params
 	  	params.require(:user).permit(:name, :email, :password, :password_confirmation)

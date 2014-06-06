@@ -12,6 +12,7 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'sprockets', '2.11.0'
+gem 'ckeditor_rails'
 
 group :development do
 	gem 'sqlite3', '1.3.8'

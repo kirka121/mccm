@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ckeditor-jquery
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
@@ -24,7 +25,7 @@
         var defaults = {
             speed: 1000,
 			easing: '',
-			changeText: 0,
+			changeText: 1,
 			showText: 'Show',
 			hideText: 'Hide'
         };
@@ -44,9 +45,8 @@
 		     $(toggleDiv).slideToggle(options.speed, options.easing, function() {
 
 		     // this only fires once the animation is completed
-			 if(options.changeText==1){
-		     	$(toggleDiv).is(":visible") ? $("#overview_header[rel="+toggleDiv+"] img.arrow").attr('src', '/assets/images/arrow-up.png') : $("#overview_header[rel="+toggleDiv+"] img.arrow").attr('src', '/assets/images/arrow-down.png');
-		     }
+		     $(toggleDiv).is(":visible") ? $("#overview_header[rel="+toggleDiv+"] img.arrow").attr('src', '/assets/arrow-up.png') : $("#overview_header[rel="+toggleDiv+"] img.arrow").attr('src', '/assets/arrow-down.png');
+
         });
 		   
 		  return false; 	   
