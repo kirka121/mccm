@@ -29,7 +29,8 @@ div.field_with_errors{
 	border-radius: 3px;
 	text-shadow: none;
 	color: #911;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 940px;
     margin-left: -14px;
 }
@@ -43,7 +44,8 @@ div.field_with_errors{
 	border-radius: 3px;
 	text-shadow: none;
 	color: #264c72;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 940px;
     margin-left: -14px;
 }
@@ -57,7 +59,8 @@ div.field_with_errors{
     border-radius: 3px;
     text-shadow: none;
     color: #264c72;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 940px;
     margin-left: -14px;
 }
@@ -69,22 +72,26 @@ div.field_with_errors{
 #active_link{
     border-left: 2px solid #86a5e9;
 }
-#menu{
+table#menu{
     border: 1px solid #b0b1b1;
     width: 100%;
     border-spacing: 0px;
     border-collapse: separate;
 }
-#menu th{
+table#menu th{
     height: 50px;
     color: #000000;
     background-image: -webkit-linear-gradient(bottom, rgb(207,230,230) 28%, rgb(227,235,254) 64%);
     background-color: rgb(207,230,230);
 }
 
-#menu td{
+table#menu td{
     border-top: 1px solid #c2c2c3;
 }
+table th.spacer{
+    width:20px;
+}
+
 .link{
     padding-top: 10px;
     padding-left: 20px;
@@ -94,15 +101,15 @@ div.field_with_errors{
 .link:hover{
     background-color: #e3ebfe;
 }
-.picture{
+table td.picture{
     width: 50px;
 }
 
-.picture img{
+table td.picture img{
     width: 50px;
     height: 50px;
 }
-.username{
+table td.username{
     text-align: left;
 }
 .border{

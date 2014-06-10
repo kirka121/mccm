@@ -15,11 +15,11 @@
   		
   		<div class="container" id="main_application_container">
 
+        <%= render 'layouts/carousel' %>
+
         <% flash.each do |key, value| %>
           <div class="<%= key %>"><%= value.html_safe %></div>
         <% end %>
-
-        <%= render 'layouts/carousel' %>
 
         <div id="kirkontainer">
           <div id="kirkontainer_header"><%= yield(:title) %></div>
@@ -27,7 +27,6 @@
               <%= yield %>
             </div>
         </div>
-  			<%= debug(params) if Rails.env.development? %>
   		</div>
   		<div id="push"></div>
   	</div>

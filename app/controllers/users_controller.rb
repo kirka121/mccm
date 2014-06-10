@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   	else
   		flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
   		@user.errors.full_messages.each do |error|
-  			flash[:form_errors] += "<br/><li>" + error + "</li>"
+  			flash[:form_errors] += "<li>" + error + "</li>"
   		end
   		flash[:form_errors] += "</ul>"
 
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
     else
       flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
       @user.errors.full_messages.each do |error|
-        flash[:form_errors] += "<br/><li>" + error + "</li>"
+        flash[:form_errors] += "<li>" + error + "</li>"
       end
       flash[:form_errors] += "</ul>"
       render 'edit'

@@ -19,14 +19,14 @@ title = yield(:title)
       		<tr>
 	      		<td id="header_container_menu_links">
 	        		<ul class="nav nav-tabs">
-			          	<li <%= "class=active" if title=="Home" %>><%= link_to "Home", home_path %></li>
-			          	<li <%= "class=active" if title=="Register" %>><%= link_to "Register", register_path %></li>
-			          	<li <%= "class=active" if title=="Videos" %>><%= link_to "Videos", videos_path %></li>
-			          	<li <%= "class=active" if title=="Results" %>><%= link_to "Results", results_path %></li>
-			          	<li <%= "class=active" if title=="Presentations" %>><%= link_to "Presentations", presentations_path %></li>
-			          	<li <%= "class=active" if title=="Papers" %>><%= link_to "Papers", papers_path %></li>
-			          	<li <%= "class=active" if title=="Help" %>><%= link_to "Help", help_path %></li>
-			          	<li <%= "class=active" if title=="About" %>><%= link_to "About", about_path %></li>
+			          	<li <%= "class=active" if title.include?"Home" %>><%= link_to "Home", home_path %></li>
+			          	<li <%= "class=active" if title.include?"Register" %>><%= link_to "Register", register_path %></li>
+			          	<li <%= "class=active" if title.include?"Videos" %>><%= link_to "Videos", videos_path %></li>
+			          	<li <%= "class=active" if title.include?"Results" %>><%= link_to "Results", results_path %></li>
+			          	<li <%= "class=active" if title.include?"Presentations" %>><%= link_to "Presentations", presentations_path %></li>
+			          	<li <%= "class=active" if title.include?"Papers" %>><%= link_to "Papers", papers_path %></li>
+			          	<li <%= "class=active" if title.include?"Help" %>><%= link_to "Help", help_path %></li>
+			          	<li <%= "class=active" if title.include?"About" %>><%= link_to "About", about_path %></li>
                   <% if signed_in? %>
 			          	  <li <%= "class=active" if title.include?("Control Panel") %> style="float: right;"><%= link_to "Control Panel", current_user %></li>
                   <% else %>

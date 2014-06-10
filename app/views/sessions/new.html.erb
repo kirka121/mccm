@@ -1,13 +1,21 @@
 <% provide(:title, "Login") %>
 
-<h1>Login</h1>
-
 <%= form_for(:session, url: sessions_path) do |f| %>
-	<%= f.text_field(:email, :placeholder => "Email", :class => 'register_user_input') %>
-
-	<%= f.password_field :password, :placeholder => "Password", :class => 'register_user_input' %>
-
-	<%= f.submit "Login", class: "btn" %>
+	<table class="information_edit_form">
+		<tr>
+			<th colspan='2'><h3>Login</h3></th>
+		</tr>
+		<tr>
+			<td class="label">Email:</td>
+			<td class="textfield"><%= f.text_field :email, :placeholder => "Last Name", :class => 'register_user_input' %></td>
+		</tr>
+		<tr>
+			<td class="label">Password:</td>
+			<td class="textfield"><%= f.password_field :password, :placeholder => "Password", :class => 'register_user_input' %></td>
+		</tr>
+		<tr>
+			<td colspan='2' class="button"> <%= f.submit "Login", class: "btn btn-default btn-lg btn-block" %> </td>
+		</tr>
+	</table>
 <% end %>
-
 <p>new user? please <%= link_to "register.", register_path %></p>

@@ -1,3 +1,7 @@
+<%
+title = yield(:title)
+%>
+
 <table id="menu">
 	<tr>
 		<th class="picture"><%= gravatar_for @user %></th>
@@ -13,7 +17,7 @@
 
 		<tr><td colspan="100%">
 			<%= link_to edit_user_path(current_user), :class => 'inner_link' do %>
-				<div class="link" <% if (@page != nil && @page=='edit') %> id="active_link" <% end %> > 
+				<div class="link" <% if title.include?"Update profile" %> id="active_link" <% end %> > 
 					> Update Profile 
 				</div>
 			<% end %>
