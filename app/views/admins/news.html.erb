@@ -1,4 +1,7 @@
 <%= render 'admins/admin_subpages/tophalf' %>
+	<%
+		provide(:title,  " - news")
+	%>
 	<script>
 		function render_partial() {
 		  $('#myeditform').html('<%=j render :partial => "admins/admin_subpages/news_edit" %>');

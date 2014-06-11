@@ -24,10 +24,14 @@ Mccm::Application.routes.draw do
 	match '/admin_subpages/', to: 'admins#index',   via: 'get'
 	match '/admin_subpages/index', to: 'admins#index', via: 'get'
 	match '/admin_subpages/news', to: 'admins#news', via: 'get'
-	match '/admin_subpages/test', to: 'admins#test', via: 'get'
-	match '/admin_subpages/test2', to: 'admins#test2', via: 'get'
-	match '/admin_subpages/test3', to: 'admins#test3', via: 'get'
-	match '/admin_subpages/test4', to: 'admins#test4', via: 'get'
+	match '/admin_subpages/settings', to: 'admins#settings', via: 'get'
+	match '/admin_subpages/videos', to: 'admins#videos', via: 'get'
+	match '/admin_subpages/results', to: 'admins#results', via: 'get'
+	match '/admin_subpages/presentations', to: 'admins#presentations', via: 'get'
+	match '/admin_subpages/help', to: 'admins#help', via: 'get'
+	match '/admin_subpages/about', to: 'admins#about', via: 'get'
+	match '/admin_subpages/users', to: 'admins#users', via: 'get'
+	match '/admin_subpages/placeholder', to: 'admins#placeholder', via: 'get'
 
 	root "static_pages#home"
 end
