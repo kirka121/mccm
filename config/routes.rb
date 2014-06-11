@@ -2,10 +2,11 @@ Mccm::Application.routes.draw do
   get "users/new"
 
   resources :news
+  resources :videos, only: [:index, :new, :show]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
-  match '/videos',		      to: 'static_pages#videos',	       via: 'get'
+  #match '/videos',		      to: 'static_pages#videos',	       via: 'get'
   match '/presentations',		to: 'static_pages#presentations',	 via: 'get'
   match '/papers',		      to: 'static_pages#papers',	       via: 'get'	
   match '/results',		      to: 'static_pages#results',	       via: 'get'

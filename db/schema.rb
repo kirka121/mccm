@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605192901) do
+ActiveRecord::Schema.define(version: 20140610143111) do
 
   create_table "news", force: true do |t|
     t.string   "title"
@@ -44,5 +44,21 @@ ActiveRecord::Schema.define(version: 20140605192901) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+
+  create_table "video_sections", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "videos", force: true do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "comments"
+    t.string   "url"
+    t.integer  "video_section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

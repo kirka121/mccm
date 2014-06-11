@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def videos
+    @someparam = params[:id]
   end
 
   def presentations

@@ -1,0 +1,15 @@
+<% provide(:title, "Videos" + " > " + @video.video_section.title + " > " + @video.title)%>
+
+<div class="cp_wholecontainer">
+	<div class="cp_container_left">
+		<%= render 'videos/menu' %>
+	</div>
+	<div class="cp_container_right">
+			<%= @video.title %><br/>
+			<%= @video.author %><br/>
+			<%= @video.comments %><br/>
+			<%= @video.created_at %><br/>
+
+			<%= @video.video_section.title %><br/>
+	</div>
+</div>

@@ -1,36 +1,30 @@
 <% provide(:title, "Videos")%>
 
-
 <div class="cp_wholecontainer">
 	<div class="cp_container_left">
-		<table id="menu">
-			<tr>
-				<th class="spacer"></th>
-				<th class="username">(PRI) PRED-5A Videos</th>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
+		<% 
+			sections = VideoSection.all
+			sections.each do |sec| 
+		%>
+			<table id="menu">
+				<tr>
+					<th class="spacer"></th>
+					<th class="username"><%= sec.title %></th>
+				</tr>
+				<% sec.videos.each do |vid| %>
+					<tr><td colspan="100%">
+						<%= link_to "/Videos/" + vid.id.to_s, :class => 'inner_link' do %>
+							<div class="link" <% if (@page != nil && @page=='profile') %> id="active_link" <% end %> > 
+								> <%= vid.title %>
+							</div>
+						<% end %>
+					</td></tr>
+				<% end %>
+			</table>
+			<br/>
+		<% end %>
 	</div>
 	<div class="cp_container_right">
-
+		<%= @someparam %>
 	</div>
 </div>

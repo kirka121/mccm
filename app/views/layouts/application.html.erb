@@ -5,6 +5,7 @@
 	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
 	  <%= render 'layouts/shim' %>
 </head>
 
@@ -27,6 +28,8 @@
               <%= yield %>
             </div>
         </div>
+
+        <%= debug(params) if Rails.env.development? %>
   		</div>
   		<div id="push"></div>
   	</div>
