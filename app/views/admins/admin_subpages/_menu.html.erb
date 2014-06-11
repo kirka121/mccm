@@ -1,0 +1,10 @@
+<table class="admin_panel_links">
+	<tr>
+		<td><%= link_to "index" do %><div <% if (@page != nil && @page=='index') %> id="active" <% end %> >status</div><% end %></td>
+		<td><%= link_to "news" do %><div <% if (@page != nil && @page=='news') %> id="active" <% end %> >news</div><% end %></td>
+		<td><%= link_to "settings" do %><div <% if (@page != nil && @page=='settings') %> id="active" <% end %> >settings</div><% end %></td>
+		<td><%= link_to "test" do %><div <% if (@page != nil && @page=='users') %> id="active" <% end %> >users</div><% end %></td>
+		<td><%= link_to "test2" do %><div <% if (@page != nil && @page=='carousel') %> id="active" <% end %> >carousel</div><% end %></td>
+		<td><%= link_to "test3" do %><div <% if (@page != nil && @page=='mailers') %> id="active" <% end %> >mailers</div><% end %></td>
+	</tr>
+</table>

@@ -1,17 +1,4 @@
-<% 
-if @page != nil
-	provide(:title, "Control Panel > " + @user.name + " > Admin Panel " + " > " + @page.sub('_', ' ')) 
-else
-	provide(:title, "Control Panel > " + @user.name + " > Update profile")
-end
-%>
-
-<div class="cp_wholecontainer">
-	<div class="cp_container_left">
-		<% @onpage ='edit' %>
-		<%= render 'user_subpages/menu' %>
-	</div>
-	<div class="cp_container_right">
+<%= render 'users/user_subpages/tophalf' %>
 		<%= form_for(@user) do |f| %>
 			<table class="information_edit_form">
 				<tr>
@@ -38,5 +25,4 @@ end
 				</tr>
 			</table>
 			<% end %>
-	</div>
-</div>
+<%= render 'users/user_subpages/bottomhalf' %>

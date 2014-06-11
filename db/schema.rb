@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610143111) do
+ActiveRecord::Schema.define(version: 20140611134745) do
 
   create_table "news", force: true do |t|
     t.string   "title"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140610143111) do
     t.integer  "contactus_mode"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "videos_index_description_html"
   end
 
   create_table "users", force: true do |t|

@@ -1,0 +1,47 @@
+<%
+title = yield(:title)
+%>
+
+<table id="menu">
+	<tr>
+		<th class="picture"><%= gravatar_for @user %></th>
+		<th class="username"><%= @user.name %></th>
+	</tr>
+		<tr><td colspan="100%">
+			<%= link_to "/users/" + current_user.id.to_s, :class => 'inner_link' do %>
+				<div class="link" <% if (@page != nil && @page=='profile') %> id="active_link" <% end %> > 
+					> My Profile 
+				</div>
+			<% end %>
+		</td></tr>
+
+		<tr><td colspan="100%">
+			<%= link_to edit_user_path(current_user), :class => 'inner_link' do %>
+				<div class="link" <% if title.include?"Update profile" %> id="active_link" <% end %> > 
+					> Update Profile 
+				</div>
+			<% end %>
+		</td></tr>
+
+		<tr><td colspan="100%">
+			<%= link_to "/users/" + current_user.id.to_s + "/email", :class => 'inner_link' do %>
+				<div class="link" <% if (@page != nil && @page=='email') %> id="active_link" <% end %>> 
+					> Email 
+				</div>
+			<% end %>
+		</td></tr>
+
+		<% if current_user.admin_level == 1 %>
+			<tr><td colspan="100%">
+				<%= link_to "/admin_subpages/", :class => 'inner_link' do %>
+					<div class="link" <% if (request.fullpath.include? "/admin_subpages/") %> id="active_link" <% end %>> 
+						> Admin Panel 
+					</div>
+				<% end %>
+			</td></tr>
+		<% end %>
+
+		<tr><td colspan="100%">
+			<a data-method="delete" href="/signout" rel="nofollow"><div class="link"> > Log out </div></a>
+		</td></tr>
+</table>

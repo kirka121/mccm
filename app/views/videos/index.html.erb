@@ -1,10 +1,10 @@
-<% provide(:title, "Videos")%>
+<% provide(:title, "Videos > Index")%>
 
 <div class="cp_wholecontainer">
 	<div class="cp_container_left">
 		<%= render 'videos/menu' %>
 	</div>
 	<div class="cp_container_right">
-		<%=  #todo load Settings.Videosdecription here %>
+		<%= @index_page_html.to_s.html_safe %>
 	</div>
 </div>

@@ -1,0 +1,16 @@
+<%
+if @page != nil
+	provide(:title, "Control panel > " + @user.name + " > Admin Panel " + " > " + @page.sub('_', ' ')) 
+else
+	provide(:title, "Control panel > " + @user.name + " > Admin Panel ")
+end
+%>
+
+<div class="cp_wholecontainer">
+	<div class="cp_container_left">
+		<%= render 'users/user_subpages/menu' %>
+	</div>
+	<div class="cp_container_right">
+		<%= render 'admins/admin_subpages/menu' %>
+		
+		<div class="margin">

@@ -41,6 +41,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def email
+  	@user = current_user
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
@@ -53,21 +57,6 @@ class UsersController < ApplicationController
       end
       flash[:form_errors] += "</ul>"
       render 'edit'
-    end
-  end
-
-  def admin
-    @news = News.find(1)
-
-    if params[:page] != nil
-      @page = params[:page]
-    end
-
-    if(signed_in?)
-      @user = User.find(current_user.id)  
-    else
-      flash[:form_errors] = "You have to sign in to perform this action."
-      redirect_to '/home'
     end
   end
 
