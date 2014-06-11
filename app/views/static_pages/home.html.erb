@@ -1,4 +1,4 @@
-<% provide(:title, "Home")%>
+<% provide(:title, "Home - News")%>
 
 <div id="overview_container">
 	<h1>News</h1>
@@ -19,8 +19,8 @@
 				<%= n.title %><%= image_tag("arrow-down.png", class: 'arrow') %> <div id="overview_header_title">on: <%= n.created_at %></div>
 			</div>
 			<div id="<%= slidestring %>">
-				<%= n.content %>
+				<%= n.content.html_safe %>
 			</div>
 			<hr/>
-	<% 	end %>
+	<% end %>
 </div>

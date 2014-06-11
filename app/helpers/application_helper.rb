@@ -6,7 +6,7 @@ module ApplicationHelper
 		if suffix.empty?
 			base_title
 		else
-			"#{base_title} - #{suffix}"
+			"#{base_title}: #{suffix}"
 		end
 	end
 
