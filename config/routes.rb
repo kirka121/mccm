@@ -1,7 +1,7 @@
 Mccm::Application.routes.draw do
 	get "users/new"
 
-	resources :news
+	resources :news, only: [:new, :edit, :update, :delete, :show]
 	resources :videos, only: [:index, :new, :show]
 	resources :sessions, only: [:new, :create, :destroy]
 	resources :settings, only: [:update, :edit]
@@ -9,6 +9,12 @@ Mccm::Application.routes.draw do
 	resources :users do
 		member do
 			get :email
+		end
+	end
+
+	resources :news do
+		member do
+			patch :edit
 		end
 	end
 
@@ -36,7 +42,7 @@ Mccm::Application.routes.draw do
 
 	match '/admin_subpages/createnews', to: 'admins#createnews', via: 'get'
 	match '/admin_subpages/editnews', to: 'admins#editnews', via: 'get'
-	match '/admin_subpages/deletenews', to: 'admins#deletenews', via: 'get'
+	match '/admin_subpages/deletenews', to: 'news#delete', 	via: 'delete'
 
 	root "static_pages#home"
 end

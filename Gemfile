@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'sprockets', '2.11.0'
 gem 'ckeditor_rails'
+gem 'thin'
 
 group :development do
 	gem 'sqlite3', '1.3.8'

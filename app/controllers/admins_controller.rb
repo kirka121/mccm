@@ -55,17 +55,4 @@ class AdminsController < ApplicationController
 
 		render 'admins/admin_subpages/_news_edit'
 	end
-
-	def deletenews
-		@new = News.find(params[:id])
-		@new.delete
-
-		flash[:form_success] = "News successfully deleted"
-
-		redirect_to '/admin_subpages/news'
-	end
-
-
-	def something new
-	end
 end

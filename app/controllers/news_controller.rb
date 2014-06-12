@@ -9,11 +9,11 @@ class NewsController < ApplicationController
 			redirect_to '/admin_subpages/news'
 		else
 			#failure
-			flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+			flash.now[:form_errors] = "Failure. Some parameters are invalid: <ul>"
 			@news.errors.full_messages.each do |error|
 				flash.now[:form_errors] += "<li>" + error + "</li>"
 			end
-			flash[:form_errors] += "</ul>"
+			flash.now[:form_errors] += "</ul>"
 			render '/admins/news'
 		end
 	end
@@ -27,11 +27,11 @@ class NewsController < ApplicationController
 			redirect_to '/admin_subpages/news'
 		else
 			#failure
-			flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+			flash.now[:form_errors] = "Failure. Some parameters are invalid: <ul>"
 			@news.errors.full_messages.each do |error|
 				flash.now[:form_errors] += "<li>" + error + "</li>"
 			end
-			flash[:form_errors] += "</ul>"
+			flash.now[:form_errors] += "</ul>"
 			render '/admins/news'
 		end
 	end
@@ -42,7 +42,13 @@ class NewsController < ApplicationController
 	end
 
 	def delete
+		@user = current_user
+		@news = News.find_by_id(params[:id])
+		@news.destroy
 
+		flash.now[:form_success] = "News successfully deleted"
+
+		render  'admins/news'
 	end
 
 	private 
