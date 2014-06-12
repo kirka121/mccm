@@ -210,6 +210,15 @@ table td.username{
 
 #overview_container{
 	padding: 5px;
+	div.slider{
+		margin-left: 25px;
+		padding: 5px;
+		width: 95%;
+		display: none;
+		position: relative; 
+		text-align: center;
+		text-align: left;
+	} 
 }
 
 #overview_header{
@@ -217,11 +226,11 @@ table td.username{
 	font-size: 18px;
 	margin-top: 20px;
 	-webkit-transition: background-color 0.6s ease;
-    -moz-transition: background-color 0.6s ease;
-    -o-transition: background-color 0.6s ease;
-    transition: background-color 0.6s ease;
-    display: inline-block;
-    width:100%;
+	  -moz-transition: background-color 0.6s ease;
+	  -o-transition: background-color 0.6s ease;
+	  transition: background-color 0.6s ease;
+	  display: inline-block;
+	  width:100%;
 }
 
 #overview_header_title{
@@ -249,15 +258,6 @@ table td.username{
     transition: background-color 0.6s ease;
 }
 
-#slider1, #slider2, #slider3{
-	margin-left: 25px;
-	padding: 5px;
-    width: 95%;
-    display: none;
-    position: relative; 
-    text-align: center;
-    text-align: left;
-} 
 
 table.admin_panel_links{
     width:100%;    

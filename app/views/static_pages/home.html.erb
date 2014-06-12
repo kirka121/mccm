@@ -18,7 +18,7 @@
 			<div id="overview_header" class="show_hide2" rel="#<%= slidestring %>">
 				<%= n.title %><%= image_tag("arrow-down.png", class: 'arrow') %> <div id="overview_header_title">on: <%= n.created_at %></div>
 			</div>
-			<div id="<%= slidestring %>">
+			<div id="<%= slidestring %>" class='slider'>
 				<%= n.content.html_safe %>
 			</div>
 			<hr/>

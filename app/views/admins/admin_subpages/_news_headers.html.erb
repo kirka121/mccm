@@ -20,7 +20,7 @@
 				<td><%= n.created_at %></td>
 				<td><%= link_to "edit", admin_subpages_editnews_path(:id => n.id)%></td>
 
-				<td><%= link_to "delete", new_news_path(:id => n.id), method: :delete,
+				<td><%= link_to "delete", admin_subpages_deletenews_path(:id => n.id), method: :delete,
                                   data: { confirm: "You sure?" }%></td>
 			</tr>
 	<% end %>

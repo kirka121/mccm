@@ -1,4 +1,7 @@
 class SettingsController < ApplicationController
+	before_action :is_admin?, only: [:edit, :update]
+
+
 	def edit
 		@user = current_user
 	end
@@ -26,5 +29,12 @@ class SettingsController < ApplicationController
 	private 
 		def settings_params
 			params.require(:settings).permit(:title, :copyright, :carousel_mode, :registration_mode, :contactus_mode)
+		end
+
+		def is_admin?
+			if current_user.admin_level != 1
+				flash[:form_errors] = "You are not an admin."
+				redirect_to root_path
+			end
 		end
 end
