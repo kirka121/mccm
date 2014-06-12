@@ -11,12 +11,12 @@
 		<table id="menu_user_logged_in_info">
 			<tr>
 				<th colspan="100%">
-					<%= @user.name %>
+					<%= @user.first_name %>
 				</th>
 			</tr>
 			<tr>
 				<td colspan="100%" class="username">
-					<%= @user.name %>
+					<%= @user.first_name %>
 				</td>
 			</tr>
 			<tr>
@@ -26,19 +26,19 @@
 			</tr>
 			<tr>
 				<td class="bullet"><%= image_tag("icon-company.png",width: '20') %></td>
-				<td class="description"><%= @user.name %></td>
+				<td class="description"><%= @user.first_name %></td>
 			</tr>
 			<tr>
 				<td class="bullet"><%= image_tag("icon-location.png",width: '20') %></td>
-				<td class="description"><%= @user.name %></td>
+				<td class="description"><%= @user.first_name %></td>
 			</tr>
 			<tr>
 				<td class="bullet"><%= image_tag("icon-email.png",width: '20') %></td>
-				<td class="description"><a href="<%= @user.name %>"><%= @user.email %></a></td>
+				<td class="description"><a href="<%= @user.first_name %>"><%= @user.email %></a></td>
 			</tr>
 			<tr>
 				<td class="bullet"><%= image_tag("icon-url.png",width: '20') %></td>
-				<td class="description"><a href="<%= @user.name %>" target="_blank"><%= @user.email %></a></td>
+				<td class="description"><a href="<%= @user.first_name %>" target="_blank"><%= @user.email %></a></td>
 			</tr>
 			<tr>
 				<td class="bullet"><%= image_tag("icon-member.png",width: '20') %></td>

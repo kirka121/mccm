@@ -1,7 +1,6 @@
 class SettingsController < ApplicationController
 	before_action :is_admin?, only: [:edit, :update]
 
-
 	def edit
 		@user = current_user
 	end

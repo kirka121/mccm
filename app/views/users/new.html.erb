@@ -14,8 +14,12 @@
 			<th colspan='2'><h3>Register</h3></th>
 		</tr>
 		<tr>
-			<td class="label">Name:</td>
-			<td class="textfield"><%= f.text_field(:name, :placeholder => "First Name", :class => 'register_user_input') %></td>
+			<td class="label">First Name:</td>
+			<td class="textfield"><%= f.text_field(:first_name, :placeholder => "First Name", :class => 'register_user_input') %></td>
+		</tr>
+		<tr>
+			<td class="label">Last Name:</td>
+			<td class="textfield"><%= f.text_field(:last_name, :placeholder => "Last Name", :class => 'register_user_input') %></td>
 		</tr>
 		<tr>
 			<td class="label">Email:</td>

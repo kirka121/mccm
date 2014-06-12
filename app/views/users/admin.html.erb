@@ -3,9 +3,9 @@
 <% else %>
 	<% 
 	if @page != nil
-		provide(:title, "Control panel > " + @user.name + " > Admin Panel " + " > " + @page.sub('_', ' ')) 
+		provide(:title, "Control panel > " + current_user.first_name + " > Admin Panel " + " > " + current_user.sub('_', ' ')) 
 	else
-		provide(:title, "Control panel > " + @user.name + " > Admin Panel ")
+		provide(:title, "Control panel > " + current_user.first_name + " > Admin Panel ")
 	end
 	%>
 

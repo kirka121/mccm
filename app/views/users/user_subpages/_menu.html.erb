@@ -4,7 +4,7 @@ title = yield(:title)
 <table id="menu">
 	<tr>
 		<th class="picture"><%= gravatar_for current_user %></th>
-		<th class="username"><%= current_user.name %></th>
+		<th class="username"><%= current_user.first_name %></th>
 	</tr>
 		<tr><td colspan="100%">
 			<%= link_to "/users/" + current_user.id.to_s, :class => 'inner_link' do %>

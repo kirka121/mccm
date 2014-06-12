@@ -54,25 +54,25 @@ end
   	@user = current_user
   end
 
-  def update
-    @user = User.find(params[:id])
+def update
+	@user = User.find(params[:id])
     
-    if @user.update_attributes(user_params)
-      flash[:form_success] = "User " + @user.name + " updated successfully."
-      redirect_to @user
-    else
-      flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
-      @user.errors.full_messages.each do |error|
-        flash[:form_errors] += "<li>" + error + "</li>"
-      end
-      flash[:form_errors] += "</ul>"
-      render 'edit'
-    end
-  end
+	if @user.update_attributes(user_params)
+		flash[:form_success] = "User " + @user.first_name + " updated successfully."
+		redirect_to @user
+	else
+		flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+		@user.errors.full_messages.each do |error|
+			flash[:form_errors] += "<li>" + error + "</li>"
+		end
+		flash[:form_errors] += "</ul>"
+		render 'edit'
+	end
+end
 
   private 
 	  def user_params
-	  	params.require(:user).permit(:name, :email, :password, :password_confirmation)
+	  	params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
 	  end
 
     def signed_in_user

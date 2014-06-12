@@ -44,5 +44,9 @@ Mccm::Application.routes.draw do
 	match '/admin_subpages/editnews', to: 'admins#editnews', via: 'get'
 	match '/admin_subpages/deletenews', to: 'news#delete', 	via: 'delete'
 
+	match '/admin_subpages/createuser', to: 'admins#createuser', via: 'get'
+	match '/admin_subpages/edituser', to: 'admins#edituser', via: 'get'
+	match '/admin_subpages/deleteuser', to: 'users#delete', 	via: 'delete'
+
 	root "static_pages#home"
 end

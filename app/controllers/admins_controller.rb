@@ -35,6 +35,8 @@ class AdminsController < ApplicationController
 
 	def users
 		@user = current_user
+
+		@users = User.all
 	end
 
 	def placeholder
