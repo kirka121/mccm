@@ -56,6 +56,7 @@ end
 
   def update
     @user = User.find(params[:id])
+    
     if @user.update_attributes(user_params)
       flash[:form_success] = "User " + @user.name + " updated successfully."
       redirect_to @user

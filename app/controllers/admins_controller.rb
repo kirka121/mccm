@@ -64,4 +64,8 @@ class AdminsController < ApplicationController
 
 		redirect_to '/admin_subpages/news'
 	end
+
+
+	def something new
+	end
 end
