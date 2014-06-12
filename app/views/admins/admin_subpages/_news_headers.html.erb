@@ -1,0 +1,27 @@
+<table class="admin_panel_news_table">
+	<tr>
+		<th>#</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Created At</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+
+	<% news = yield_all_news
+		counter = 0
+		news.each do |n|
+			counter+=1
+	%>
+			<tr>
+				<td><%= counter %></td>
+				<td><%= n.title %></td>
+				<td><%= n.author %></td>
+				<td><%= n.created_at %></td>
+				<td><%= link_to "edit", admin_subpages_editnews_path(:id=> n.id)%></td>
+
+				<td><%= link_to "delete", admin_subpages_deletenews_path(id: n.id) %></td>
+			</tr>
+	<% end %>
+</table>
+<br/>

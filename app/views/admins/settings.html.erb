@@ -1,6 +1,41 @@
+<script type="text/javascript">
+	$('.ckeditor').ckeditor({
+	  // optional config
+	});
+</script>
+
 <%= render 'admins/admin_subpages/tophalf' %>
 	<%
 		provide(:title,  " - settings")
 	%>
-	settings
+	<%=  form_for @set do |f| %>
+		<table class="information_edit_form">
+			<tr>
+				<th colspan='2'><h3>Update Website settings</h3></th>
+			</tr>
+			<tr>
+				<td class="label">Title:</td>
+				<td class="textfield"><%= f.text_field :title, :placeholder => "Title", :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
+				<td class="label">Copyright:</td>
+				<td class="textfield"><%= f.text_field :copyright, :placeholder => "Copyright", :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
+				<td class="label">Carousel Mode:</td>
+				<td class="textfield"><%= f.text_field :carousel_mode,:placeholder => "Carousel Mode", :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
+				<td class="label">Registration Mode:</td>
+				<td class="textfield"><%= f.text_field :registration_mode,:placeholder => "Registration Mode", :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
+				<td class="label">Contact Us Mode:</td>
+				<td class="textfield"><%= f.text_field :contactus_mode,:placeholder => "Contact Us Mode", :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
+				<td colspan='2' class="button"> <%= f.submit "Save changes", class: "btn btn-default btn-lg btn-block" %> </td>
+			</tr>
+		</table>
+	<% end %>
 <%= render 'admins/admin_subpages/bottomhalf' %>

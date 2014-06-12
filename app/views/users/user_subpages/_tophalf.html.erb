@@ -1,9 +1,5 @@
 <% 
-if @page != nil
-	provide(:title, "Control Panel > " + @user.name + " > " + @page.sub('_', ' ')) 
-else
-	provide(:title, "Control Panel > " + @user.name)
-end
+	provide(:title, "Control Panel - " + @user.name) 
 %>
 
 <div class="cp_wholecontainer">

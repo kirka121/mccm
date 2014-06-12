@@ -1,15 +1,14 @@
 <%
 title = yield(:title)
 %>
-
 <table id="menu">
 	<tr>
-		<th class="picture"><%= gravatar_for @user %></th>
-		<th class="username"><%= @user.name %></th>
+		<th class="picture"><%= gravatar_for current_user %></th>
+		<th class="username"><%= current_user.name %></th>
 	</tr>
 		<tr><td colspan="100%">
 			<%= link_to "/users/" + current_user.id.to_s, :class => 'inner_link' do %>
-				<div class="link" <% if (@page != nil && @page=='profile') %> id="active_link" <% end %> > 
+				<div class="link" > 
 					> My Profile 
 				</div>
 			<% end %>
@@ -17,7 +16,7 @@ title = yield(:title)
 
 		<tr><td colspan="100%">
 			<%= link_to edit_user_path(current_user), :class => 'inner_link' do %>
-				<div class="link" <% if title.include?"Update profile" %> id="active_link" <% end %> > 
+				<div class="link" <% if current_page?"edit" %> id="active_link" <% end %> > 
 					> Update Profile 
 				</div>
 			<% end %>
@@ -25,7 +24,7 @@ title = yield(:title)
 
 		<tr><td colspan="100%">
 			<%= link_to "/users/" + current_user.id.to_s + "/email", :class => 'inner_link' do %>
-				<div class="link" <% if (@page != nil && @page=='email') %> id="active_link" <% end %>> 
+				<div class="link" <% if current_page?"email" %> id="active_link" <% end %>> 
 					> Email 
 				</div>
 			<% end %>
@@ -33,8 +32,8 @@ title = yield(:title)
 
 		<% if current_user.admin_level == 1 %>
 			<tr><td colspan="100%">
-				<%= link_to "/admin_subpages/", :class => 'inner_link' do %>
-					<div class="link" <% if (request.fullpath.include? "/admin_subpages/") %> id="active_link" <% end %>> 
+				<%= link_to "/admin_subpages/index", :class => 'inner_link' do %>
+					<div class="link" <% if current_page?"admin_subpages" %> id="active_link" <% end %>> 
 						> Admin Panel 
 					</div>
 				<% end %>

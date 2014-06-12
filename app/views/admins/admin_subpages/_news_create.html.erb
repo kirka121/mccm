@@ -5,17 +5,19 @@
 
 	<%= render 'admins/admin_subpages/news_headers' %>
 
-<script type="text/javascript">
-	$('.ckeditor').ckeditor({
-	  // optional config
-	});
-</script>
+
+
+	<script type="text/javascript">
+		$('.ckeditor').ckeditor({
+		  // optional config
+		});
+	</script>
 
 <div class="edit_form">
 	<table class="information_edit_form">
 		<%= form_for @news do |f| %>
 			<tr>
-				<th colspan='2'><h3>Edit News</h3></th>
+				<th colspan='2'><h3>Create News</h3></th>
 			</tr>
 			<tr>
 				<td class="label">Title:</td>
@@ -25,7 +27,7 @@
 				<td colspan='2'><%= f.text_area :content, :class => 'ckeditor' %></td>
 			</tr>
 			<tr>
-				<td colspan='2' class="button"><%= f.submit "Edit", class: "btn btn-default btn-lg btn-block" %> </td>
+				<td colspan='2' class="button"><%= f.submit "Create", class: "btn btn-default btn-lg btn-block" %> </td>
 			</tr>
 		<% end %>
 	</table>

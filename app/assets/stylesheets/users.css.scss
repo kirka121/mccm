@@ -274,6 +274,9 @@ table.admin_panel_links{
         background-color: #e3ebfe;
         text-decoration: underline;
     }
+    hr{
+    	margin: 2px;
+    }
 }
 
 table.admin_panel_news_table{
@@ -297,7 +300,7 @@ table.information_edit_form{
         font-size: 14px;
     }
     td.textfield{
-        width: 600px;
+        width: 100%;
         input{
             width: 100%;
         }

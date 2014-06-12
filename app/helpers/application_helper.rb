@@ -29,4 +29,12 @@ module ApplicationHelper
  	def yield_contactus_mode
  		return Settings.find(1).contactus_mode
  	end
+
+ 	def current_page?(provider)
+		if request.fullpath.include? provider
+			return true
+		else
+			return false
+		end
+	end
 end

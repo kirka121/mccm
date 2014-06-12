@@ -10,6 +10,7 @@ class AdminsController < ApplicationController
 
 	def settings
 		@user = current_user
+		@set = Settings.find(1)
 	end
 
 	def videos
@@ -40,4 +41,27 @@ class AdminsController < ApplicationController
 		@user = current_user
 		@testing = 'this is placeholder'
 	end	
+
+	def createnews
+		@user = current_user
+		@news = News.new
+
+		render 'admins/admin_subpages/_news_create'
+	end
+
+	def editnews
+		@user = current_user
+		@news = News.find(params[:id])
+
+		render 'admins/admin_subpages/_news_edit'
+	end
+
+	def deletenews
+		@new = News.find(params[:id])
+		@new.delete
+
+		flash[:form_success] = "News successfully deleted"
+
+		redirect_to '/admin_subpages/news'
+	end
 end

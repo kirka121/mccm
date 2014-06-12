@@ -1,98 +1,101 @@
 <table class="admin_panel_links">
 	<tr>
 		<td>
-			<%= link_to "settings" do %>
-				<div <% if (@page != nil && @page=='settings') %> id="active" <% end %>>
+			<%= link_to "/admin_subpages/settings" do %>
+				<div <% if current_page?('settings') %> id="active" <% end %>>
 					Settings
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "news" do %>
-				<div <% if (@page != nil && @page=='news') %> id="active" <% end %>> 
+			<%= link_to "/admin_subpages/news" do %>
+				<div <% if current_page?('news') %> id="active" <% end %>> 
 					News
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "videos" do %>
-				<div <% if (@page != nil && @page=='videos') %> id="active" <% end %>> 
+			<%= link_to "/admin_subpages/videos" do %>
+				<div <% if current_page?('videos') %> id="active" <% end %>> 
 					Videos
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "results" do %>
-				<div <% if (@page != nil && @page=='results') %> id="active" <% end %>> 
+			<%= link_to "/admin_subpages/results" do %>
+				<div <% if current_page?('results') %> id="active" <% end %>> 
 					Results
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "presentations" do %>
-				<div <% if (@page != nil && @page=='presentations') %> id="active" <% end %>> 
+			<%= link_to "/admin_subpages/presentations" do %>
+				<div <% if current_page?('presentations') %> id="active" <% end %>> 
 					Presentations
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "help" do %>
-				<div <% if (@page != nil && @page=='help') %> id="help" <% end %>> 
+			<%= link_to "/admin_subpages/help" do %>
+				<div <% if current_page?('help') %> id="active" <% end %>> 
 					Help
 				</div>
 			<% end %>
 		</td>
 	</tr>
 	<tr>
+		<td colspan="100%"><hr/></td>
+	</tr>
+	<tr>
 		<td>
-			<%= link_to "about" do %>
-				<div <% if (@page != nil && @page=='about') %> id="about" <% end %>> 
+			<%= link_to "/admin_subpages/about" do %>
+				<div <% if current_page?('about') %> id="active" <% end %>> 
 					About
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "users" do %>
-				<div <% if (@page != nil && @page=='users') %> id="active" <% end %>> 
+			<%= link_to "/admin_subpages/users" do %>
+				<div <% if current_page?('users') %> id="active" <% end %>> 
 					Users
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "placeholder" do %>
-				<div <% if (@page != nil && @page=='placeholder') %> id="active" <% end %>> 
+			<%= link_to "/admin_subpages/placeholder" do %>
+				<div <% if current_page?('placeholder') %> id="active" <% end %>> 
 					placeholder
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "placeholder" do %>
-				<div <% if (@page != nil && @page=='placeholder') %> id="active" <% end %>> 
+			<%= link_to "/admin_subpages/placeholder" do %>
+				<div <% if current_page?('placeholder') %> id="active" <% end %>> 
 					placeholder
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "placeholder" do %>
-				<div <% if (@page != nil && @page=='placeholder') %> id="active" <% end %>>
+			<%= link_to "/admin_subpages/placeholder" do %>
+				<div <% if current_page?('placeholder') %> id="active" <% end %>> 
 					placeholder
 				</div>
 			<% end %>
 		</td>
 
 		<td>
-			<%= link_to "placeholder" do %>
-				<div <% if (@page != nil && @page=='placeholder') %> id="active" <% end %>> 
-					placeholder
+			<%= link_to "/admin_subpages/index" do %>
+				<div <% if current_page?('index') %> id="active" <% end %>> 
+					index
 				</div>
 			<% end %>
 		</td>

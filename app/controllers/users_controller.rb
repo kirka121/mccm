@@ -2,6 +2,15 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user, only: [:edit, :update]
 
+def index
+	if current_user != nil
+		@user = current_user
+	else
+		flash[:form_errors] = "You can not view the list of users!"
+		redirect_to root_path
+	end
+end
+
   def new
   	@user = User.new
   end

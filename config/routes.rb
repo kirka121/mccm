@@ -4,11 +4,12 @@ Mccm::Application.routes.draw do
 	resources :news
 	resources :videos, only: [:index, :new, :show]
 	resources :sessions, only: [:new, :create, :destroy]
+	resources :settings, only: [:update, :edit]
 
 	resources :users do
-	  member do
-	    get :email
-	  end
+		member do
+			get :email
+		end
 	end
 
 	match '/presentations',		to: 'static_pages#presentations',	 via: 'get'
@@ -32,6 +33,10 @@ Mccm::Application.routes.draw do
 	match '/admin_subpages/about', to: 'admins#about', via: 'get'
 	match '/admin_subpages/users', to: 'admins#users', via: 'get'
 	match '/admin_subpages/placeholder', to: 'admins#placeholder', via: 'get'
+
+	match '/admin_subpages/createnews', to: 'admins#createnews', via: 'get'
+	match '/admin_subpages/editnews', to: 'admins#editnews', via: 'get'
+	match '/admin_subpages/deletenews', to: 'admins#deletenews', via: 'get'
 
 	root "static_pages#home"
 end

@@ -42,6 +42,13 @@
 	- can answer requests
 	- can publish videos, pictures, stories etc.
 
+-users
+	- status; user / staff / admin
+	- can send inmail to anyone on the staff list
+	- can upload files to personal folder
+	- can share files with any email address
+	- can delete self
+
 -------
 -DONE:-
 -------
