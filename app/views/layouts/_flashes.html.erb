@@ -1,0 +1,7 @@
+<% flash.each do |key, value| %>
+      <% if key == :form_errors %>
+      		<%= form_errors(value) %>
+      <% elsif key == :form_success %>
+      		<%= form_success(value) %>
+      	<% end %>
+<% end %>

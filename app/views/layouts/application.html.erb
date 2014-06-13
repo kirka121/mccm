@@ -18,9 +18,7 @@
 
         <%= render 'layouts/carousel' %>
 
-        <% flash.each do |key, value| %>
-          <div class="<%= key %>"><%= value.html_safe %></div>
-        <% end %>
+        <%= render 'layouts/flashes' %>
 
         <div id="kirkontainer">
           <div id="kirkontainer_header"><%= yield(:title) %></div>

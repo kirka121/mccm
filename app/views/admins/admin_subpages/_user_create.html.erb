@@ -1,0 +1,52 @@
+<%= render 'admins/admin_subpages/tophalf' %>
+	<%
+		provide(:title,  " - create user")
+	%>
+<%= render 'admins/admin_subpages/users_headers' %>
+
+<script type="text/javascript">
+	$('.ckeditor').ckeditor({
+	  // optional config
+	});
+</script>
+
+<%= form_alert("Creating users using this form will bypass validation. Meaning you can input invalid data and bad parameters. Be Careful!") %>
+
+<div class="edit_form">
+	<table class="information_edit_form">
+		<%= form_for @createuser,  url: admin_createuser_path(id: @createuser.id)  do |f| %>
+			<tr>
+				<th colspan='2'><h3>Create User</h3></th>
+			</tr>
+			<tr>
+				<td class="label">First Name:</td>
+				<td class="textfield"><%= f.text_field :first_name, :placeholder => "First Name", :class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td class="label">Last Name:</td>
+				<td class="textfield"><%= f.text_field :last_name, :placeholder => "Last Name", :class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td class="label">E-Mail:</td>
+				<td class="textfield"><%= f.text_field :email, :placeholder => "E-Mail", :class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td class="label">Admin Level:</td>
+				<td class="textfield"><%= f.select :admin_level, [['Admin', 1], ['Staff', 2], ['User', 0]], :class => 'reigster_user_input' %></td>
+			</tr>
+			<tr>
+				<td class="label">Password:</td>
+				<td class="textfield"><%= f.password_field :password, :placeholder => "Password", :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
+				<td class="label">Confirm:</td>
+				<td class="textfield"><%= f.password_field :password_confirmation, :placeholder => "Confirmation", :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
+				<td colspan='2' class="button"><%= f.submit "Create User", class: "btn btn-default btn-lg btn-block"  %> </td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+<%= render 'admins/admin_subpages/bottomhalf' %>

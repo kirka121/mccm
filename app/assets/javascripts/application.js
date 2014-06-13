@@ -21,7 +21,7 @@
 (function ($) {
     $.fn.showHide2 = function (options) {
 
-		//default vars for the plugin
+	//default vars for the plugin
         var defaults = {
             speed: 1000,
 			easing: '',

@@ -27,7 +27,7 @@
 			<tr>
 				<td colspan='2' class="button"><%= f.submit "Create", class: "btn btn-default btn-lg btn-block" %> </td>
 			</tr>
-			<%= f.hidden_field :author, :value => current_user.name %>
+			<%= f.hidden_field :author, :value => (kircapitalize(current_user.first_name)+ " " +kircapitalize(current_user.last_name))%>
 		<% end %>
 	</table>
 </div>
