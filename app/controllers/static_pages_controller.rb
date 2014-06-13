@@ -1,41 +1,39 @@
 class StaticPagesController < ApplicationController
-  def home
-  end
+	def home
+	end
 
-  def videos
-  end
+	def videos
+	end
 
-  def presentations
-  end
+	def presentations
+	end
 
-  def papers
-  end
+	def papers
+	end
 
-  def results
-  end
+	def results
+	end
 
-  def help
-  end
+	def help
+	end
 
-  def about
-  end
+	def about
+	end
 
-  def index
-  end
+	def index
+	end
 
-  def send_feedback
-  	email = params["/help"][:email]
-  	name = params["/help"][:name]
-  	content = params["/help"][:content]
+	def send_feedback
+		email = params["/help"][:email]
+		name = params["/help"][:name]
+		content = params["/help"][:content]
 
-  	if FeedbackMailer.contactus(email,name,content).deliver
-  		flash[:form_success] = "Your E-Mail has been delivered."
-  		render 'help'
-  	else
-  		flash[:form_errors] = "Your E-Mail has not been delivered"
-  		render 'help'
-  	end
-
-  end
-
+		if FeedbackMailer.contactus(email,name,content).deliver
+			flash[:form_success] = "Your E-Mail has been delivered."
+			render 'help'
+		else
+			flash[:form_errors] = "Your E-Mail has not been delivered"
+			render 'help'
+		end
+	end
 end
