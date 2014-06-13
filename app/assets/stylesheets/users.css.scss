@@ -180,11 +180,11 @@ table td.username{
 	font-size: 18px;
 	margin-top: 20px;
 	-webkit-transition: background-color 0.6s ease;
-	  -moz-transition: background-color 0.6s ease;
-	  -o-transition: background-color 0.6s ease;
-	  transition: background-color 0.6s ease;
-	  display: inline-block;
-	  width:100%;
+	-moz-transition: background-color 0.6s ease;
+	-o-transition: background-color 0.6s ease;
+	transition: background-color 0.6s ease;
+	display: inline-block;
+	width:100%;
 }
 
 #overview_header_title{
@@ -207,11 +207,10 @@ table td.username{
 #overview_header:hover{
 	background-color: rgba(0,0,0,0.3);
 	-webkit-transition: background-color 0.6s ease;
-    -moz-transition: background-color 0.6s ease;
-    -o-transition: background-color 0.6s ease;
-    transition: background-color 0.6s ease;
+	-moz-transition: background-color 0.6s ease;
+	-o-transition: background-color 0.6s ease;
+	transition: background-color 0.6s ease;
 }
-
 
 table.admin_panel_links{
     width:100%;    
