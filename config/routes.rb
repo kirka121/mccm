@@ -51,6 +51,7 @@ Mccm::Application.routes.draw do
 	match '/admin_subpages/edituser', to: 'admins#edituser', via: 'get'
 	patch '/admin_subpages/edituser' => "admins#doedituser", :as => "admin_edituser"
 	post '/admin_subpages/createuser' => "admins#docreateuser", :as => "admin_createuser"
+	post 'help' => "static_pages#send_feedback", :as => "sendfeedback"
 	match '/admin_subpages/deleteuser', to: 'admins#dodeleteuser', 	via: 'delete'
 
 	root "static_pages#home"

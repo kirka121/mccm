@@ -2,14 +2,13 @@
 	<%
 		provide(:title,  " - create news")
 	%>
+<%= render 'admins/admin_subpages/news_headers' %>
 
-	<%= render 'admins/admin_subpages/news_headers' %>
-
-	<script type="text/javascript">
-		$('.ckeditor').ckeditor({
-		  // optional config
-		});
-	</script>
+<script type="text/javascript">
+	$('.ckeditor').ckeditor({
+	  // optional config
+	});
+</script>
 
 <div class="edit_form">
 	<table class="information_edit_form">

@@ -3,5 +3,9 @@
       		<%= form_errors(value) %>
       <% elsif key == :form_success %>
       		<%= form_success(value) %>
+      	<% elsif key == :form_alert %>
+      		<%= form_alert(value) %>
+      	<% elsif key == :form_warning %>
+      		<%= form_warning(value) %>
       	<% end %>
 <% end %>

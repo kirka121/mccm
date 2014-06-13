@@ -3,7 +3,6 @@ class StaticPagesController < ApplicationController
   end
 
   def videos
-    @someparam = params[:id]
   end
 
   def presentations
@@ -22,6 +21,21 @@ class StaticPagesController < ApplicationController
   end
 
   def index
-  	@foo = 'bar'
   end
+
+  def send_feedback
+  	email = params["/help"][:email]
+  	name = params["/help"][:name]
+  	content = params["/help"][:content]
+
+  	if FeedbackMailer.contactus(email,name,content).deliver
+  		flash[:form_success] = "Your E-Mail has been delivered."
+  		render 'help'
+  	else
+  		flash[:form_errors] = "Your E-Mail has not been delivered"
+  		render 'help'
+  	end
+
+  end
+
 end
