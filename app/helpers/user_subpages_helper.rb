@@ -38,7 +38,7 @@ module UserSubpagesHelper
 		mystring += image_tag("warningicon.png", width: '40px', height: '40px', id: 'image')
 		mystring += "<span class='header'>" + "Warning: " +"</span>"
 		mystring += "<span class='content'>" + string +"</span>"
-		mystring += "<button type='button' class='close' data-dismiss='alert'aria-hidden='true'>&times;</button>"
+		mystring += "<button type='button' class='close' data-dismiss='alert'>&times;</button>"
 		mystring += "</div>"
 		return mystring.html_safe
 	end
