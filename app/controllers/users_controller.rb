@@ -84,7 +84,7 @@ end
 
     def correct_user
       @user = User.find(params[:id])
-      unless current_user?(@user)
+      unless current_user?(@user) || current_user.admin_level == 1
         flash[:form_errors] = "You are trying to operate as the wrong user. Contact administration."
         redirect_to(root_url) 
       end

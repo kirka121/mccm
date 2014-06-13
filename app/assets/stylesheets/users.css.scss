@@ -20,51 +20,6 @@ div.field_with_errors{
     display: inline-block;
 }
 
-.form_errors{
-	font: 13px Helvetica, arial, freesans, clean, sans-serif;
-	background-repeat: repeat-x;
-	border: 1px solid #da9797;
-	padding: 10px;
-	background-color: #efd0d0;
-	border-radius: 3px;
-	text-shadow: none;
-	color: #911;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 940px;
-    margin-left: -14px;
-}
-
-.form_success{
-	font: 13px Helvetica, arial, freesans, clean, sans-serif;
-	background-repeat: repeat-x;
-	border: 1px solid #97c1da;
-	padding: 10px;
-	background-color: #d0e3ef;
-	border-radius: 3px;
-	text-shadow: none;
-	color: #264c72;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 940px;
-    margin-left: -14px;
-}
-
-.form_notice{
-    font: 13px Helvetica, arial, freesans, clean, sans-serif;
-    background-repeat: repeat-x;
-    border: 1px solid #97c1da;
-    padding: 10px;
-    background-color: #d0e3ef;
-    border-radius: 3px;
-    text-shadow: none;
-    color: #264c72;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 940px;
-    margin-left: -14px;
-}
-
 .border{
    border: 3px solid #ddddde; 
 }
@@ -92,7 +47,6 @@ table#menu td{
 table th.spacer{
     width:20px;
 }
-
 
 .link{
     padding-top: 10px;
@@ -303,6 +257,11 @@ table.information_edit_form{
         width: 100%;
         input{
             width: 100%;
+        }
+        select{
+        	width: 100%;
+        	padding: 10px;
+        	font-size: 14px;
         }
         padding-bottom: 10px;
     }
