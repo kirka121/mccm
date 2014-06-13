@@ -23,7 +23,7 @@
 			</tr>
 			<tr>
 				<td class="label">Carousel Mode:</td>
-				<td class="textfield"><%= f.text_field :carousel_mode,:placeholder => "Carousel Mode", :class => 'register_user_input' %></td>
+				<td class="textfield"><%= f.select :carousel_mode, [['Always ON', 0], ['Always OFF', 1], ['Only Home Page', 2]], :class => 'reigster_user_input' %></td>
 			</tr>
 			<tr>
 				<td class="label">Registration Mode:</td>

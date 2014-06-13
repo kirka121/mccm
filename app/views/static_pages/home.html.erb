@@ -12,9 +12,8 @@
 			slidestring = "slider"
 			iconstring += counter.to_s
 			slidestring+= counter.to_s
-			iconstring += ".png"
-			
-			%>
+			iconstring += ".png"	
+	%>
 			<div id="overview_header" class="show_hide2" rel="#<%= slidestring %>">
 				<%= n.title %><%= image_tag("arrow-down.png", class: 'arrow') %> <div id="overview_header_title">on: <%= n.created_at %></div>
 			</div>
