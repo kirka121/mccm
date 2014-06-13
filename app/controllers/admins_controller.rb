@@ -41,8 +41,11 @@ class AdminsController < ApplicationController
 
 	def placeholder
 		@user = current_user
-		@testing = 'this is placeholder'
 	end	
+
+	def carouselimages
+		@user = current_user
+	end
 
 	def createnews
 		@user = current_user

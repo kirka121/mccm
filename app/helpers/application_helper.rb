@@ -37,4 +37,12 @@ module ApplicationHelper
 			return false
 		end
 	end
+
+	def ishomepage?
+		if request.fullpath.include? 'home'
+			return true
+		else
+			return false
+		end
+	end
 end

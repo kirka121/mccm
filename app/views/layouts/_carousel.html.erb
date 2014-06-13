@@ -14,4 +14,10 @@
 	});
 </script>
 
-<div id="photo_container"></div> 
+
+<% if yield_carousel_mode == 0 %>
+	<div id="photo_container"></div> 
+<% elsif yield_carousel_mode == 1 %>
+<% elsif yield_carousel_mode == 2 &&  ishomepage? %>
+	<div id="photo_container"></div> 
+<% end %>

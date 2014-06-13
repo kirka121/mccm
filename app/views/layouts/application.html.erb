@@ -11,36 +11,27 @@
 
   <body>
   	<div id="wrap">
-  		<!-- wrapper to allow footer to be pinned to bottom of page regardless of page length-->
-  		<%= render 'layouts/header' %> 
-  		
+		<%= render 'layouts/header' %> 
   		<div class="container" id="main_application_container">
-
-        <%= render 'layouts/carousel' %>
-
-        <%= render 'layouts/flashes' %>
-
-        <div id="kirkontainer">
-          <div id="kirkontainer_header"><%= yield(:title) %></div>
-            <div id="kirkontainer_padding">
-              <%= yield %>
-            </div>
-        </div>
-
-        <%= debug(params) if Rails.env.development? %>
-  		</div>
-  		<div id="push"></div>
-  	</div>
+        		<%= render 'layouts/carousel' %>
+        		<%= render 'layouts/flashes' %>
+			<div id="kirkontainer">
+				<div id="kirkontainer_header">
+					<%= yield(:title) %>
+				</div>
+				<div id="kirkontainer_padding">
+					<%= yield %>
+				</div>
+			</div>
+       			<%= debug(params) if Rails.env.development? %>
+		</div>
+		<div id="push"></div>
+	</div>
   	<div id="footer">
   		<%= render 'layouts/footer' %>
-  	</div>
+	</div>
   </body>
 </html>
-
-
-
-
-
 
 
 

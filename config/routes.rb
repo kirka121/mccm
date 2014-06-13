@@ -40,6 +40,7 @@ Mccm::Application.routes.draw do
 	match '/admin_subpages/about', to: 'admins#about', via: 'get'
 	match '/admin_subpages/users', to: 'admins#users', via: 'get'
 	match '/admin_subpages/placeholder', to: 'admins#placeholder', via: 'get'
+	match '/admin_subpages/carouselimages', to: 'admins#carouselimages', via: 'get'
 
 	match '/admin_subpages/createnews', to: 'admins#createnews', via: 'get'
 	match '/admin_subpages/editnews', to: 'admins#editnews', via: 'get'
