@@ -14,6 +14,7 @@ gem 'jquery-ui-rails'
 gem 'sprockets', '2.11.0'
 gem 'ckeditor_rails'
 gem 'thin'
+gem "paperclip", "~> 4.1"
 
 group :development do
 	gem 'sqlite3', '1.3.8'

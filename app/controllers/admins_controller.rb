@@ -57,4 +57,6 @@ class AdminsController < ApplicationController
 
 		render 'admins/admin_subpages/_news_edit'
 	end
+
+	
 end

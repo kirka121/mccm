@@ -9,6 +9,7 @@ Mccm::Application.routes.draw do
 	resources :users do
 		member do
 			get :email
+			get :files
 		end
 	end
 
