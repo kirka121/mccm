@@ -23,15 +23,15 @@
 			</tr>
 			<tr>
 				<td class="label">Carousel Mode:</td>
-				<td class="textfield"><%= f.select :carousel_mode, [['Always ON', 0], ['Always OFF', 1], ['Only Home Page', 2]], :class => 'reigster_user_input' %></td>
+				<td class="textfield"><%= f.select :carousel_mode, [['Always ON', 0], ['Always OFF', 1], ['Home page ONLY', 2]], :class => 'reigster_user_input' %></td>
 			</tr>
 			<tr>
 				<td class="label">Registration Mode:</td>
-				<td class="textfield"><%= f.text_field :registration_mode,:placeholder => "Registration Mode", :class => 'register_user_input' %></td>
+				<td class="textfield"><%= f.select :registration_mode, [['Open registration', 0], ['Email confirmation required', 1], ['Email invite only', 2]], :class => 'reigster_user_input' %></td>
 			</tr>
 			<tr>
 				<td class="label">Contact Us Mode:</td>
-				<td class="textfield"><%= f.text_field :contactus_mode,:placeholder => "Contact Us Mode", :class => 'register_user_input' %></td>
+				<td class="textfield"><%= f.select :contactus_mode, [['Everyone', 0], ['Users only', 1]], :class => 'reigster_user_input' %></td>
 			</tr>
 			<tr>
 				<td colspan='2' class="button"> <%= f.submit "Save changes", class: "btn btn-default btn-lg btn-block" %> </td>
