@@ -49,20 +49,17 @@ Mccm::Application.routes.draw do
 	match '/admin_subpages/createuser', to: 'admins#createuser', via: 'get'
 	match '/admin_subpages/edituser', to: 'admins#edituser', via: 'get'
 	match '/admin_subpages/deleteuser', to: 'admins#dodeleteuser', 	via: 'delete'
+	patch '/admin_subpages/edituser' => "admins#doedituser", :as => "admin_edituser"
+	post '/admin_subpages/createuser' => "admins#docreateuser", :as => "admin_createuser"
 
 	match '/admin_subpages/createvideo', to: 'admins#createvideo', via: 'get'
 	match '/admin_subpages/editvideo', to: 'admins#editvideo', via: 'get'
 	match '/admin_subpages/deletevideo', to: 'admins#dodeletevideo', 	via: 'delete'
-
-	patch '/admin_subpages/edituser' => "admins#doedituser", :as => "admin_edituser"
-	post '/admin_subpages/createuser' => "admins#docreateuser", :as => "admin_createuser"
-
 	patch '/admin_subpages/editvideo' => "admins#doeditvideo", :as => "admin_editvideo"
 	post '/admin_subpages/createvideo' => "admins#docreatevideo", :as => "admin_createvideo"
+	post '/admin_subpages/videos' => "videos#update", :as => "admin_edit_video_description_page"
 
 	post 'help' => "static_pages#send_feedback", :as => "sendfeedback"
-
-	post '/admin_subpages/videos' => "videos#update", :as => "admin_edit_video_description_page"
 
 	root "static_pages#home"
 end
