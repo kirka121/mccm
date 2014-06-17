@@ -2,5 +2,21 @@
 	<%
 		provide(:title,  " - videos")
 	%>
-	videos
+<%= render 'admins/admin_subpages/video_headers' %>
+
+<%= link_to "Create Video", admin_subpages_createvideo_path, class: "btn btn-default btn-lg btn-block" %>
+
+<%=  form_for admin_edit_video_description_page_path do |f| %>
+	<table class="information_edit_form">
+		<tr>
+			<th colspan='2'><h3>Videos static page - Update</h3></th>
+		</tr>
+		<tr>
+			<td class="textfield"><%= f.text_area(:myvideosindex, value: @myvideosindex, :class => 'ckeditor') %></td></td>
+		</tr>
+		<tr>
+			<td colspan='2' class="button"> <%= f.submit "Save changes", class: "btn btn-default btn-lg btn-block" %> </td>
+		</tr>
+	</table>
+<% end %>
 <%= render 'admins/admin_subpages/bottomhalf' %>

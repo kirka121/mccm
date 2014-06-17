@@ -12,6 +12,14 @@ module UserSubpagesHelper
 		News.all
 	end
 
+	def yield_all_videos
+		Video.all
+	end
+
+	def yield_video_sections
+		VideoSection.all
+	end
+
 	def admin_lvl?
 		#0 == nothing
 		#1 == full admin
@@ -66,4 +74,9 @@ module UserSubpagesHelper
 	def kircapitalize(string)
 		string.slice(0,1).capitalize + string.slice(1..-1)
 	end
+
+	def kirauthor(user)
+		kircapitalize(user.first_name) + " " + kircapitalize(user.last_name)
+	end
+
 end

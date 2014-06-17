@@ -15,6 +15,7 @@ class AdminsController < ApplicationController
 
 	def videos
 		@user = current_user
+		@myvideosindex = Settings.find(1).videos_index_description_html
 	end
 
 	def results
@@ -78,6 +79,79 @@ class AdminsController < ApplicationController
 		render 'admins/admin_subpages/_user_edit'
 	end
 
+	def createvideo
+		@user = current_user
+
+		@createvideo = Video.new
+		render 'admins/admin_subpages/_video_create'
+	end
+
+	def editvideo
+		@user = current_user
+
+		@editvideo = Video.find(params[:id])
+		render 'admins/admin_subpages/_video_edit'
+	end
+
+	def deletevideo
+		@user = current_user
+		video = Video.find_by_id(params[:id])
+		video.destroy
+
+		flash.now[:form_success] = "Video successfully deleted"
+
+		render  'admins/videos'
+	end
+
+	def docreatevideo
+		@user = current_user
+
+		video = Video.new
+		video.attributes = video_params
+
+		if video.save(validate: true)
+			flash[:form_success] = "Video has been createvideo."
+			redirect_to '/admin_subpages/videos'
+		else
+			flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+			video.errors.full_messages.each do |error|
+				flash[:form_errors] += "<li>" + error + "</li>"
+			end
+			flash[:form_errors] += "</ul>"
+			redirect_to '/admin_subpages/videos'
+		end
+	end
+
+	def doeditvideo
+		@user = current_user
+
+		video = Video.find(params[:id])
+		video.attributes = video_params
+
+		if video.save(validate: true)
+			flash[:form_success] = "Video has been edited."
+			redirect_to '/admin_subpages/videos'
+		else
+			flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+			video.errors.full_messages.each do |error|
+				flash[:form_errors] += "<li>" + error + "</li>"
+			end
+			flash[:form_errors] += "</ul>"
+			redirect_to '/admin_subpages/videos'
+		end
+	end
+
+	def dodeletevideo
+		video = Video.find_by_id(params[:id])
+		 if video.destroy
+		 	flash[:form_success] = "Video successfully deleted"
+		 else
+		 	flash[:form_errors] = "Video failed to delete."
+		 end
+
+		redirect_to '/admin_subpages/videos'
+	end
+
 	def doedituser
 		@edituser = User.find(params[:id])
 		@users = User.all
@@ -132,5 +206,9 @@ class AdminsController < ApplicationController
 
 	   def user_params_withpw
 	  	params.require(:user).permit(:first_name, :last_name, :email, :admin_level, :password, :password_confirmation)
+	  end
+
+	   def video_params
+	  	params.require(:video).permit(:title, :author, :comments, :video_section_id)
 	  end
 end

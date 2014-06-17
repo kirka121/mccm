@@ -4,7 +4,6 @@
 
 <div id="overview_container">
 	<% 
-
 	counter = 0
 	yield_all_faqs.each do |faq| 
 		counter+=1
@@ -15,7 +14,6 @@
 		iconstring += ".png"	
 		%>
 
-
 		<div id="overview_header" class="show_hide2" rel="#<%= slidestring %>">
 			<%= faq.title %><%= image_tag("arrow-down.png", class: 'arrow') %> <div id="overview_header_title">on: <%= faq.created_at %></div>
 		</div>
@@ -25,6 +23,7 @@
 			by: <%= faq.author %>
 		</div>
 		<hr/>
+		
 	<% end %>
 	<br/>
 	<br/>
