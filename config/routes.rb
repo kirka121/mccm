@@ -5,7 +5,8 @@ Mccm::Application.routes.draw do
 	resources :videos, only: [:index, :show,:update, :delete]
 	resources :sessions, only: [:new, :create, :destroy]
 	resources :settings, only: [:update, :edit]
-	resources :carousel_images, only: [:update, :edit, :delete]
+
+	resources :carousel_images, only: [:new, :update, :edit, :delete, :show]
 
 	resources :users do
 		member do
@@ -59,6 +60,7 @@ Mccm::Application.routes.draw do
 	patch '/admin_subpages/editvideo' => "admins#doeditvideo", :as => "admin_editvideo"
 	post '/admin_subpages/createvideo' => "admins#docreatevideo", :as => "admin_createvideo"
 	post '/admin_subpages/videos' => "videos#update", :as => "admin_edit_video_description_page"
+	post '/carousel_images/new' => "carousel_images#new", :as => "carousel_new_add"
 
 	post 'help' => "static_pages#send_feedback", :as => "sendfeedback"
 

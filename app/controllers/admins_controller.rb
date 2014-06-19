@@ -39,6 +39,7 @@ class AdminsController < ApplicationController
 	def carouselimages
 		@user = current_user
 
+		@carousel = CarouselImage.new
 	end
 	
 	def createnews
@@ -193,10 +194,6 @@ class AdminsController < ApplicationController
 
 	   def video_params
 	  	params.require(:video).permit(:title, :author, :comments, :video_section_id)
-	  end
-
-	  def carouselimage_params
-	  	params.fetch(:carousel_image).permit(:image, :author)
 	  end
 
 	  def validate_everything
