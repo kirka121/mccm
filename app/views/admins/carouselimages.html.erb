@@ -1,0 +1,20 @@
+<%= render 'admins/admin_subpages/tophalf' %>
+	<%
+		provide(:title,  " - carousel images")
+	%>
+		<div style="border: 1px solid red">
+			<% @images.each do |img| %>
+				<%= img %>
+			<% end %>
+		</div>
+		<div>	
+			<%= image_tag @carousel.image.url %>
+			<%= image_tag @carousel.image.url(:medium) %>
+			<%= image_tag @carousel.image.url(:thumb) %>
+		</div>
+		<div>
+			<% form_for @carousel, url: edit_carousel_image_path(@carousel, @carousel.id) do |form| %>
+			  	<%= form.file_field :avatar %>
+			<% end %>
+		</div>
+<%= render 'admins/admin_subpages/bottomhalf' %>

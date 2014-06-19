@@ -1,0 +1,40 @@
+<%= render 'admins/admin_subpages/tophalf' %>
+	<%
+		provide(:title,  " - videos create")
+	%>
+<%= render 'admins/admin_subpages/video_headers' %>
+
+<div class="edit_form">
+	<table class="information_edit_form">
+		<%= form_for @createvideo,  url: admin_createvideo_path(id: @createvideo.id)  do |f| %>
+			<tr>
+				<th colspan='2'><h3>Create Video</h3></th>
+			</tr>
+			<tr>
+				<td class="label">Title:</td>
+				<td class="textfield"><%= f.text_field :title, :placeholder => "Title", :class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td class="label">Author:</td>
+				<td class="textfield"><%= f.text_field :author, value: kirauthor(current_user), :placeholder => "Author", :class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td class="label">Comments:</td>
+				<td class="textfield"><%= f.text_area :comments, :class => 'ckeditor' %></td>
+			</tr>
+			<tr>
+				<td class="label">Section:</td>
+				<td class="textfield"><%= f.select :video_section_id, options_from_collection_for_select(VideoSection.all, :id, :title), :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
+				<td class="label">YouTube URL:</td>
+				<td class="textfield"><%= f.text_field :url, :placeholder => "YouTube URL", :class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td colspan='2' class="button"><%= f.submit "Create Video", class: "btn btn-default btn-lg btn-block"  %> </td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+<%= render 'admins/admin_subpages/bottomhalf' %>

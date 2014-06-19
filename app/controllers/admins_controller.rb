@@ -39,11 +39,7 @@ class AdminsController < ApplicationController
 	def carouselimages
 		@user = current_user
 	end
-
-
-
-
-
+	
 	def createnews
 		@user = current_user
 		@news = News.new

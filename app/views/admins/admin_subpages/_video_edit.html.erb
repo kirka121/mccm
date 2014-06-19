@@ -1,0 +1,37 @@
+<%= render 'admins/admin_subpages/tophalf' %>
+	<%
+		provide(:title,  " - videos edit")
+	%>
+<%= render 'admins/admin_subpages/video_headers' %>
+
+<div class="edit_form">
+	<table class="information_edit_form">
+		<%= form_for @editvideo,  url: admin_editvideo_path(id: @editvideo.id)  do |f| %>
+			<tr>
+				<th colspan='2'><h3>Edit Video</h3></th>
+			</tr>
+			<tr>
+				<td class="label">Title:</td>
+				<td class="textfield"><%= f.text_field :title, :placeholder => "Title", :class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td class="label">Comments:</td>
+				<td class="textfield"><%= f.text_area :comments, :class => 'ckeditor' %></td>
+			</tr>
+			<tr>
+				<td class="label">Section:</td>
+				<td class="textfield"><%= f.select :video_section_id, options_from_collection_for_select(VideoSection.all, :id, :title, @editvideo.video_section_id), :class => 'register_user_input' %></td>
+			</tr>
+				<tr>
+				<td class="label">YouTube URL:</td>
+				<td class="textfield"><%= f.text_field :url, :placeholder => "YouTube URL", :class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td colspan='2' class="button"><%= f.submit "Edit Video", class: "btn btn-default btn-lg btn-block"  %> </td>
+			</tr>
+			<%= f.hidden_field :author, value: kirauthor(current_user) %>
+		<% end %>
+	</table>
+</div>
+
+<%= render 'admins/admin_subpages/bottomhalf' %>

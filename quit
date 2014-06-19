@@ -1,0 +1,211 @@
+commit 1ec76f51d7f4235117d07afb0541a97800472bf6
+Author: kirka121 <kirka121@gmail.com>
+Date:   Tue Jun 17 15:28:31 2014 -0400
+
+    end of day commit, sherry is a noob. period.
+
+commit 5bfa8aa9ef1de5cca950e1ae9bec3a589fbfb47f
+Author: kirka121 <kirka121@gmail.com>
+Date:   Tue Jun 17 12:12:20 2014 -0400
+
+    finished crud on videos. need to add crud on video sections
+
+commit b61c5c993c776c1886d3a2dc55051a6b51f5cf44
+Author: kirka121 <kirka121@gmail.com>
+Date:   Tue Jun 17 10:04:35 2014 -0400
+
+    beginning of week commit
+
+commit 5037c3d4f2ff8fba783e5e66c780d834174559d2
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 15:15:25 2014 -0400
+
+    merging
+
+commit 20acb2410b084471282450dcacfffb1514f43bb0
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 15:13:21 2014 -0400
+
+    contactus form ready. action mailer hooked. test sending inmail
+
+commit d33b92d38e942945092f3f269f752e2f7782355e
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 14:31:43 2014 -0400
+
+    faq shows
+
+commit fdaf9782014559042e3cc9d98f1efecf515b9a84
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 14:08:35 2014 -0400
+
+    registration mode switching works. need to actionmailer -> send email
+
+commit 9221be32953c396f4a8c2664d29fd524af3d76b0
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 13:39:15 2014 -0400
+
+    carousel mode switching works as expected
+
+commit 21c2fcf0f33672ca3663eae25c43b5af39191f74
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 13:28:19 2014 -0400
+
+    starting website settings proper functionality
+
+commit cf8cf388e8d9aa2dddcc77c0251022b364c22a3c
+Merge: 33285be 7e66772
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 13:11:10 2014 -0400
+
+    Merge branch 'users'
+
+commit 7e667727752514c505be45025c2f132ccd26b44e
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 13:10:50 2014 -0400
+
+    done with alerts, done with crud on users from admin panel
+
+commit 33285be9ba1720d95a988f4006179594bea89ddb
+Merge: e163d6b 3c56fba
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 10:31:04 2014 -0400
+
+    resolving conflicts
+
+commit 3c56fbaf010ac7f1cb7c8b2e2b06a5f5dbad5702
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 10:29:59 2014 -0400
+
+    added custom alert boxes, need to add js close button
+
+commit e163d6bcb245fc70902e0a954c3da4f2d3306145
+Author: kirka121 <kirka121@gmail.com>
+Date:   Fri Jun 13 08:56:59 2014 -0400
+
+    beginning of day commit
+
+commit 88385fd61c8d42474f8de4a61b79d061a53f70f6
+Author: kirka121 <kirka121@gmail.com>
+Date:   Thu Jun 12 15:33:03 2014 -0400
+
+    switched users around, added user crud in admin panel
+
+commit da4225262586682753fcab264c8d222ffb4779f7
+Author: kirka121 <kirka121@gmail.com>
+Date:   Thu Jun 12 14:30:37 2014 -0400
+
+    adding heroku precomplie
+
+commit 9959fa53f84f9c1a7355515f4d13cb859e0b7aa2
+Author: Kirill Afan <kirka121@gmail.com>
+Date:   Thu Jun 12 14:22:27 2014 -0400
+
+    finished news validations
+
+commit b4c0a5f7013d19b41f38afdb50fb9949fda2d7d5
+Author: Kirill Afan <kirka121@gmail.com>
+Date:   Thu Jun 12 13:28:17 2014 -0400
+
+    finished crud on news
+
+commit a46a942ca046b3c9ad96eb7a9c61e99dbd7b59f9
+Author: Kirill Afan <kirka121@gmail.com>
+Date:   Thu Jun 12 10:31:59 2014 -0400
+
+    commit
+
+commit b32ecfbee5a093012272bb0779d9be8dbd67ab03
+Author: Kirill Afan <kirka121@gmail.com>
+Date:   Thu Jun 12 10:28:42 2014 -0400
+
+    progress on news
+
+commit 2d636c79cd4c34caf13e67c385d7820d6abb77d5
+Author: Kirill Afan <kirka121@gmail.com>
+Date:   Wed Jun 11 12:30:27 2014 -0400
+
+    changed menu func
+
+commit 0dc3b7c46943e0d2a6977d7e0fdf3e7ce14775bc
+Author: Kirill Afan <kirka121@gmail.com>
+Date:   Wed Jun 11 11:38:16 2014 -0400
+
+    admin panel
+
+commit 8d1614f24330d62c21a3a15582f402f3531595c7
+Author: Kirill Afan <kirka121@gmail.com>
+Date:   Wed Jun 11 11:17:48 2014 -0400
+
+    refactored admin panel and user panel, videos and news get added
+
+commit dc0e8c9a663bf85e4eada9e30d67cc80f370615f
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Wed Jun 11 09:11:10 2014 -0400
+
+    commit to  transfer to linux
+
+commit ef7f0ead1814a2bc1d7d8b99c8b4de833a90e4e1
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Tue Jun 10 10:26:28 2014 -0400
+
+    commit before attempting videos page
+
+commit 0a5935b58700e6779321814962b243fe90f109d0
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Fri Jun 6 15:34:05 2014 -0400
+
+    coder burnout commit
+
+commit ab6f60ab3c4799a6db4ff88339178021d3e93016
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Fri Jun 6 14:00:15 2014 -0400
+
+    committing merge
+
+commit 3f5901d708d4eb25eaa7d7ca86d5722aab2c4b5c
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Fri Jun 6 13:56:59 2014 -0400
+
+    editing users works
+
+commit 66a11011ba4201e84ae3526a30df5cf6d6867455
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Fri Jun 6 12:19:48 2014 -0400
+
+    refactor, add ckeditor
+
+commit ece48dc824da86cc9e88f2b36839fa59abc3b57e
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Thu Jun 5 15:26:34 2014 -0400
+
+    login logout works
+    
+    - added static pages
+    - added control panel
+    - added content wrappers
+    - added footer
+    - started on database
+
+commit bc978b623760321fbd92251dcb788bfc6e656dca
+Author: Kirill <afan0003@algonquinlive.com>
+Date:   Mon Feb 10 16:00:17 2014 -0500
+
+    some commi
+
+commit e9a31d83bd72496106d4cea88f4ec220a5c81fed
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Tue Jan 28 11:59:00 2014 -0500
+
+    showing users
+
+commit 09c61249e51858b02e17d30535ca654192a151c7
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Mon Jan 27 16:19:41 2014 -0500
+
+    starting user authentication
+
+commit bf6517a7405116f528e7af2a86e50603c0e630da
+Author: kirill afanasenko <kirka121@gmail.com>
+Date:   Mon Jan 27 12:40:43 2014 -0500
+
+    starting static pages
