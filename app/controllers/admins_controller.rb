@@ -39,8 +39,21 @@ class AdminsController < ApplicationController
 	def carouselimages
 		@user = current_user
 
-		@carousel = CarouselImage.new
+		@allimages = CarouselImage.all
 	end
+
+	def createcarouselimage
+		@allimages = CarouselImage.all
+		@carousel = CarouselImage.new
+		render '/admins/admin_subpages/_carousel_create'
+	end
+
+	def editcarouselimage
+		@allimages = CarouselImage.all
+		@carousel = CarouselImage.new
+		render '/admins/admin_subpages/_carousel_edit'
+	end
+
 	
 	def createnews
 		@user = current_user

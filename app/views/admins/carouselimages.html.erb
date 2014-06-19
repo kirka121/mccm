@@ -2,13 +2,7 @@
 	<%
 		provide(:title,  " - carousel images")
 	%>
-	
-	<div>
-		<%= form_for @carousel, url: carousel_new_add_path do |f| %>
-			<%= f.file_field :image %>
-			<br/>
-			<%= f.submit "Add image to carousel", class: "btn btn-default btn-lg btn-block" %> 
-			<%= f.hidden_field  :author, value: kirauthor(current_user) %>
-		<% end %>
-	</div>
+	<%= render 'admins/admin_subpages/carousel_headers' %>
+
+	<%= link_to "New Image", admin_subpages_createcarouselimage_path, class: "btn btn-default btn-lg btn-block" %>
 <%= render 'admins/admin_subpages/bottomhalf' %>

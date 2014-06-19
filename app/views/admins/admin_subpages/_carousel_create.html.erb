@@ -1,0 +1,15 @@
+<%= render 'admins/admin_subpages/tophalf' %>
+	<%
+		provide(:title,  " - carousel images - create")
+	%>
+	<%= render 'admins/admin_subpages/carousel_headers' %>
+
+	<div>
+		<%= form_for @carousel, url: carousel_new_add_path do |f| %>
+			<%= f.file_field :image %>
+			<br/>
+			<%= f.hidden_field  :author, value: kirauthor(current_user) %>
+			<%= f.submit "Add an image", class: "btn btn-default btn-lg btn-block"  %>
+		<% end %>
+	</div>	
+<%= render 'admins/admin_subpages/bottomhalf' %>

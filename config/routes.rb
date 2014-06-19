@@ -54,6 +54,11 @@ Mccm::Application.routes.draw do
 	patch '/admin_subpages/edituser' => "admins#doedituser", :as => "admin_edituser"
 	post '/admin_subpages/createuser' => "admins#docreateuser", :as => "admin_createuser"
 
+	match '/admin_subpages/createcarouselimage', to: 'admins#createcarouselimage', via: 'get'
+	match '/admin_subpages/editcarouselimage', to: 'admins#editcarouselimage', via: 'get'
+	patch '/admin_subpages/editcarouselimage' => "admins#doeditcarouselimage", :as => "admin_editcarouselimage"
+	post '/admin_subpages/createcarouselimage' => "admins#docreatecarouselimage", :as => "admin_createcarouselimage"
+
 	match '/admin_subpages/createvideo', to: 'admins#createvideo', via: 'get'
 	match '/admin_subpages/editvideo', to: 'admins#editvideo', via: 'get'
 	match '/admin_subpages/deletevideo', to: 'admins#dodeletevideo', 	via: 'delete'
