@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { minimum: 5, maximum: 50 }
 
 	has_secure_password
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :small => "100x100>" }, :url => "/system/users/avatars/:id/:style/:basename.:extension", :default_style => :small, :path => ":rails_root/public/system/users/avatars/:id/:style/:basename.:extension", :default_url => "/system/users/avatars/default/:style/missing.png"
+  	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64

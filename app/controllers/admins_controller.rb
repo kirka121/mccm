@@ -38,6 +38,7 @@ class AdminsController < ApplicationController
 	end	
 	def carouselimages
 		@user = current_user
+
 	end
 	
 	def createnews
@@ -183,15 +184,19 @@ class AdminsController < ApplicationController
 
 	  private 
 	  def user_params
-	  	params.require(:user).permit(:first_name, :last_name, :email, :admin_level)
+	  	params.require(:user).permit(:first_name, :last_name, :email, :admin_level, :avatar)
 	  end
 
 	   def user_params_withpw
-	  	params.require(:user).permit(:first_name, :last_name, :email, :admin_level, :password, :password_confirmation)
+	  	params.require(:user).permit(:first_name, :last_name, :email, :admin_level,  :avatar, :password, :password_confirmation)
 	  end
 
 	   def video_params
 	  	params.require(:video).permit(:title, :author, :comments, :video_section_id)
+	  end
+
+	  def carouselimage_params
+	  	params.fetch(:carousel_image).permit(:image, :author)
 	  end
 
 	  def validate_everything

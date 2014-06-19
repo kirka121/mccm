@@ -35,6 +35,10 @@
 				<td class="textfield"><%= f.select :admin_level, [['Admin', 1], ['Staff', 2], ['User', 0]], :class => 'reigster_user_input' %></td>
 			</tr>
 			<tr>
+				<td class="label">Avatar: %></td>
+				<td class="textfield"><%= f.file_field :avatar, :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
 				<td colspan='2' class="button"><%= f.submit "Edit", class: "btn btn-default btn-lg btn-block"  %> </td>
 			</tr>
 		<% end %>

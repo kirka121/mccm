@@ -5,6 +5,7 @@ Mccm::Application.routes.draw do
 	resources :videos, only: [:index, :show,:update, :delete]
 	resources :sessions, only: [:new, :create, :destroy]
 	resources :settings, only: [:update, :edit]
+	resources :carousel_images, only: [:update, :edit, :delete]
 
 	resources :users do
 		member do
