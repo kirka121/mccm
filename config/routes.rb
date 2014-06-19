@@ -6,7 +6,7 @@ Mccm::Application.routes.draw do
 	resources :sessions, only: [:new, :create, :destroy]
 	resources :settings, only: [:update, :edit]
 
-	resources :carousel_images, only: [:new, :update, :edit, :delete, :show]
+	resources :carousel_images, only: [:new, :update, :delete, :show]
 
 	resources :users do
 		member do
@@ -55,17 +55,17 @@ Mccm::Application.routes.draw do
 	post '/admin_subpages/createuser' => "admins#docreateuser", :as => "admin_createuser"
 
 	match '/admin_subpages/createcarouselimage', to: 'admins#createcarouselimage', via: 'get'
-	match '/admin_subpages/editcarouselimage', to: 'admins#editcarouselimage', via: 'get'
-	patch '/admin_subpages/editcarouselimage' => "admins#doeditcarouselimage", :as => "admin_editcarouselimage"
+	match '/admin_subpages/deletecarouselimage', to: 'admins#dodeletecarouselimage', via: 'delete'
 	post '/admin_subpages/createcarouselimage' => "admins#docreatecarouselimage", :as => "admin_createcarouselimage"
+	post '/carousel_images/new' => "carousel_images#new", :as => "carousel_new_add"
 
 	match '/admin_subpages/createvideo', to: 'admins#createvideo', via: 'get'
 	match '/admin_subpages/editvideo', to: 'admins#editvideo', via: 'get'
 	match '/admin_subpages/deletevideo', to: 'admins#dodeletevideo', 	via: 'delete'
+
 	patch '/admin_subpages/editvideo' => "admins#doeditvideo", :as => "admin_editvideo"
 	post '/admin_subpages/createvideo' => "admins#docreatevideo", :as => "admin_createvideo"
 	post '/admin_subpages/videos' => "videos#update", :as => "admin_edit_video_description_page"
-	post '/carousel_images/new' => "carousel_images#new", :as => "carousel_new_add"
 
 	post 'help' => "static_pages#send_feedback", :as => "sendfeedback"
 

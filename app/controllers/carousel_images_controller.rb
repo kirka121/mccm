@@ -14,14 +14,15 @@ class CarouselImagesController < ApplicationController
 
 	def new
 		@carousel = CarouselImage.create(carousel_params)
+		@allimages = CarouselImage.all
 		#@carousel = CarouselImage.new
 		#@carousel.attributes = carousel_params
 
 		if(@carousel.save)
-			flash.now[:form_success] = "i think the image was saved"
+			flash.now[:form_success] = "The image has been saved."
 			render 'admins/carouselimages'
 		else
-			flash.now[:form_errors] = "you done goofed"
+			flash.now[:form_errors] = "There was an error. The image was not saved."
 			render 'admins/carouselimages'
 		end
 	end

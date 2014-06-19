@@ -1,9 +1,13 @@
-<script type="text/javascript">
-	var carousel_images = new Array();
-	carousel_images[0] = "/assets/carousel/1.jpg";
-	carousel_images[1] = "/assets/carousel/2.jpg";
-	carousel_images[2] = "/assets/carousel/3.jpg";
-	carousel_images[3] = "/assets/carousel/4.jpg";
+<%= javascript_tag do %>
+	var carousel_images = new Array();	
+
+	<%
+		counter = 0
+		yield_all_carousel_images.each do |img|%>
+
+	carousel_images[<%= counter %>] = "<%= img.image.url(:original, timestamp: false) %>";
+	<% counter +=1 %>
+	<%end%>	
 	
 	$(window).load(function() {
 		$("#photo_container").isc({
@@ -12,7 +16,7 @@
 			autoplayTimer: 5000
 		});	
 	});
-</script>
+<% end %>
 
 <% if yield_carousel_mode == 0 %>
 	<div id="photo_container"></div> 

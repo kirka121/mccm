@@ -1,5 +1,25 @@
-<% @allimages.each do |img| %>
-	<%= img.image_file_name %>
-	<%= img.author %>
-	<%= img.image_file_size %>
-<% end %> 
+<table class="admin_panel_news_table">
+	<tr>
+		<th>#</th>
+		<th>Preview</th>
+		<th>Author</th>
+		<th>Created At</th>
+		<th>Delete</th>
+	</tr>
+
+	<% 
+		counter = 0
+		@allimages.each do |img|
+			counter+=1
+	%>
+			<tr>
+				<td><%= counter %></td>
+				<td><%= image_tag img.image.url(:preview) %></td>
+				<td><%= img.author %></td>
+				<td><%= img.created_at.to_s %></td>
+				<td><%= link_to "delete", admin_subpages_deletecarouselimage_path(:id => img.id), method: :delete,
+                                  data: { confirm: "You sure?" }%></td>
+			</tr>
+	<% end %>
+</table>
+<br/>
