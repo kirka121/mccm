@@ -3,7 +3,7 @@
 			<table id="menu_user_logged_in_img">
 				<tr>
 					<td>
-						<%= gravatar_for @user %>
+						<%= image_tag current_user.avatar.url(:medium) %>
 					</td>
 				</tr>
 			</table>

@@ -24,6 +24,10 @@
 			<td class="textfield"><%= f.password_field :password_confirmation, :placeholder => "Confirmation", :class => 'register_user_input' %></td>
 		</tr>
 		<tr>
+			<td class="label">Avatar:</td>
+			<td class="textfield"><%= f.file_field :avatar, :class => 'register_user_input' %></td>
+		</tr>	
+		<tr>
 			<td colspan='2' class="button"> <%= f.submit "Create my account", class: "btn btn-default btn-lg btn-block" %> </td>
 		</tr>
 	</table>
