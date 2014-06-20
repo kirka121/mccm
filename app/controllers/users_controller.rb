@@ -34,13 +34,13 @@ end
 
   def create
   	if @@reg_mode == 0
-	  	@user = User.new(user_params) #not final
-	  	@user.needsactivation = false
-	  	@user.activation_key = nil
+	  	@user = User.new(user_params)
+	  	@user.needsactivation = 0
+	  	@user.activation_key = 'activated'
 
 	  	if @user.save
 	  		sign_in @user
-	  		flash[:form_success] = "You have logged in."
+	  		flash[:form_success] = "You have registered and logged in."
 	  		redirect_to @user
 	  	else
 	  		flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
@@ -52,7 +52,7 @@ end
 	  		render 'new'
 	  	end
 	  elsif @@reg_mode == 1
-	  	@user = User.new(user_params) #not final
+	  	@user = User.new(user_params)
 	  	@user.needs_activation = 1
 	  	@user.activation_key = generate_activation_key
 
@@ -61,6 +61,27 @@ end
 	  		flash[:form_warning] = "You have registered, however you are required to activate your account to log in. Please check your email and follow the instructions within it."
 		  	redirect_to '/signin'
 		end
+	  elsif @@reg_mode == 2
+	  	@user = User.new(user_params)
+	  	@user.needs_activation = 0
+	  	@user.activation_key = 'activated'
+
+	  	 if @user.save
+		  	sign_in @user
+	  		flash[:form_success] = "You have registered and logged in."
+		  	invitation = InvitationsSent.find_by_id(params[:user][:theid])
+		  	invitation.destroy
+			redirect_to @user
+		elsif
+			flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+	  		@user.errors.full_messages.each do |error|
+	  			flash[:form_errors] += "<li>" + error + "</li>"
+	  		end
+	  		flash[:form_errors] += "</ul>"
+
+	  		render 'new'
+	  	end
+			
 	  end
   end
 

@@ -1,3 +1,8 @@
+<% if @user == nil && :thisisaninvite 
+		@user = @theuser %>
+		<%= form_success('Your invitation seems valid. Please complete your registration below. Note, if you do not do so within 30 days, your invitation will expire.') %>
+<% end %>
+
 <%= form_for(@user) do |f| %>
 	<table class="information_edit_form">
 		<tr>
@@ -11,10 +16,12 @@
 			<td class="label">Last Name:</td>
 			<td class="textfield"><%= f.text_field(:last_name, :placeholder => "Last Name", :class => 'register_user_input') %></td>
 		</tr>
+		<% if !:thisisaninvite %>
 		<tr>
 			<td class="label">E-Mail:</td>
 			<td class="textfield"><%= f.text_field :email, :placeholder => "E-Mail", :class => 'register_user_input' %></td>
 		</tr>
+		<% end %>
 		<tr>
 			<td class="label">Password:</td>
 			<td class="textfield"><%= f.password_field :password, :placeholder => "Password", :class => 'register_user_input' %></td>
@@ -31,4 +38,11 @@
 			<td colspan='2' class="button"> <%= f.submit "Create my account", class: "btn btn-default btn-lg btn-block" %> </td>
 		</tr>
 	</table>
+<% if :thisisaninvite %>
+<%= f.hidden_field :email, value: @user.email.to_s %>
+<% end %>
+<% if :inviteid %>
+<%= f.hidden_field :theid, value: params[:id] %>
+<% end %>
+
 <% end %>

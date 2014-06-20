@@ -31,6 +31,7 @@ Mccm::Application.routes.draw do
 	match '/signin',          to: 'sessions#new',                via: 'get'
 	match '/signout',         to: 'sessions#destroy',            via: 'delete'
 	match '/verify', 		to: 'static_pages#verifyaccount', via: 'get'
+	match '/invited', to: 'static_pages#inviteaccount', via: 'get'
 
 	match '/admin_subpages/', to: 'admins#index',   via: 'get'
 	match '/admin_subpages/index', to: 'admins#index', via: 'get'

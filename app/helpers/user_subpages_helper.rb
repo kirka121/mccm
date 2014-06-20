@@ -51,7 +51,7 @@ module UserSubpagesHelper
 		return mystring.html_safe
 	end
 
-	def form_error(string)
+	def form_errors(string)
 		mystring = "<div class='alert alert-danger alert-dismissable'>" 
 		mystring += image_tag("crossfailureimage.png", width: '40px', height: '40px', id: 'image')
 		mystring += "<span class='header'>" + "Error: " +"</span>"

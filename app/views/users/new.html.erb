@@ -8,12 +8,12 @@
 	<li>etc, etc.</li>
 </ul>
 
-<% if yield_registration_mode == 0 ||  yield_registration_mode == 1%>
+<% if yield_registration_mode == 0 ||  yield_registration_mode == 1 || (defined?(thisisaninvite) && thisisaninvite == true) %>
 	<% if yield_registration_mode == 1 %>
 		<%= form_alert("Registration requires E-Mail confirmation. Please make sure you are using a VALID E-Mail address.") %>
 	<% end %>
 	<%= render 'users/user_subpages/registration_form' %>
-<% elsif yield_registration_mode == 2  %>
+<% elsif yield_registration_mode == 2 %>
 	<%= form_warning("Registration is by administration E-Mail invite only. Please <a href='/help'>contact us</a> to request an invite.") %>
 <% end %>
 

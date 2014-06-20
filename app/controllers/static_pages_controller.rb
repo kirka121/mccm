@@ -40,6 +40,25 @@ class StaticPagesController < ApplicationController
 		end
 	end
 
+	def inviteaccount
+		@id = params[:id]
+		@key = params[:key]
+
+		@theuser = User.new
+		theinvite = InvitationsSent.find_by_id(@id)
+
+		if @theuser != nil && theinvite != nil
+			if theinvite.confirmation_key == @key
+				@theuser.needs_activation = false;
+				@theuser.activation_key = 'activated'
+				@theuser.email = theinvite.email
+				@result = 'success'
+				render 'users/new', locals: {thisisaninvite: true, :inviteid =>  theinvite.id.to_s}
+			end
+		end
+		
+	end
+
 	def send_feedback
 		email = params["/help"][:email]
 		name = params["/help"][:name]

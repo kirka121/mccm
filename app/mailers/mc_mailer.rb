@@ -10,7 +10,14 @@ class McMailer < ActionMailer::Base
 	end
 
 	def invitation(email, user)
+		@invitation = InvitationsSent.new
+		@invitation.confirmation_key = generate_activation_key
+		@invitation.email = email
+		@invitation.save
+
 		@user = user
+		@email = email
+
 		mail(to: email, subject: '[MCCM] Membership Invitation')
 	end
 
@@ -21,4 +28,12 @@ class McMailer < ActionMailer::Base
 
 		mail(to: user.email, subject: '[MCCM VERIFICATION]' + user.first_name + " " + user.last_name)
 	end
+
+	private 
+		def generate_activation_key
+			o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
+			string = (0...50).map { o[rand(o.length)] }.join
+			#return Digest::MD5.hexdigest(string) if want MD5 the string as well
+			return string
+		end
 end
