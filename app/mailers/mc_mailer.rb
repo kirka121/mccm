@@ -18,6 +18,6 @@ class McMailer < ActionMailer::Base
 		@key = user.activation_key
 		@userid = user.id
 
-		mail(to: DEVELOPEREMAIL, subject: '[MCCM VERIFICATION]' + user.first_name + " " + user.last_name)
+		mail(to: user.email, subject: '[MCCM VERIFICATION]' + user.first_name + " " + user.last_name)
 	end
 end

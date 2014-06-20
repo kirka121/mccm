@@ -47,13 +47,31 @@ ActiveRecord::Schema.define(version: 20140620134353) do
     t.integer  "carousel_mode"
     t.integer  "registration_mode"
     t.integer  "contactus_mode"
+    t.text     "videos_index_description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "videos_index_description_html"
   end
 
-# Could not dump table "users" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_digest"
+    t.string   "remember_token"
+    t.integer  "admin_level"
+    t.string   "last_name"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.integer  "needs_activation"
+    t.text     "activation_key"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
   create_table "video_sections", force: true do |t|
     t.string   "title"
@@ -65,7 +83,6 @@ ActiveRecord::Schema.define(version: 20140620134353) do
     t.string   "title"
     t.string   "author"
     t.string   "comments"
-    t.string   "url"
     t.integer  "video_section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
