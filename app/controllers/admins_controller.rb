@@ -245,10 +245,22 @@ class AdminsController < ApplicationController
 
 	def inviteuser
 		email = params["/admin_subpages/inviteusers"][:email]
-		if McMailer.invitation(email, current_user).deliver
-			flash[:form_success] = "Invitation E-Mail sent to: " + email
+
+		@invitation = InvitationsSent.new
+		@invitation.confirmation_key = generate_activation_key
+		@invitation.email = email
+		if @invitation.save
+			if McMailer.invitation(email, current_user, @invitation.id, @invitation.confirmation_key).deliver
+				flash[:form_success] = "Invitation E-Mail sent to: " + email
+			else
+				flash[:form_errors]  = "E-Mail failed to send. SMTP error."
+			end
 		else
-			flash[:form_errors]  = "E-Mail not sent."
+			flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+			@invitation.errors.full_messages.each do |error|
+				flash[:form_errors] += "<li>" + error + "</li>"
+			end
+			flash[:form_errors] += "</ul>"
 		end
 		render 'inviteusers'
 	end
@@ -268,5 +280,12 @@ class AdminsController < ApplicationController
 
 		def validate_everything
 			
+		end
+
+		def generate_activation_key
+			o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
+			string = (0...50).map { o[rand(o.length)] }.join
+			#return Digest::MD5.hexdigest(string) if want MD5 the string as well
+			return string
 		end
 end
