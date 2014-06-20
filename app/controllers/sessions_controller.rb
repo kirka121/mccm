@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 		else
 			if user && user.authenticate(params[:session][:password])
 				sign_in user
-				flash[:form_success] = "Login successful." + user.needs_activation.to_s + " | " + user.activation_key.to_s
+				flash[:form_success] = user.first_name + " logged in." 
 				redirect_to user
 			else
 				flash.now[:form_errors] = "Login failed."

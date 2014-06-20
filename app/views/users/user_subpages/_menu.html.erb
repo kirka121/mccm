@@ -23,9 +23,17 @@ title = yield(:title)
 		</td></tr>
 
 		<tr><td colspan="100%">
-			<%= link_to "/users/" + current_user.id.to_s + "/files", :class => 'inner_link' do %>
+			<%= link_to "/users/" + current_user.id.to_s + "/email", :class => 'inner_link' do %>
 				<div class="link" <% if current_page?"email" %> id="active_link" <% end %>> 
-					> Email 
+					> E-Mail 
+				</div>
+			<% end %>
+		</td></tr>
+
+		<tr><td colspan="100%">
+			<%= link_to "/users/" + current_user.id.to_s + "/files", :class => 'inner_link' do %>
+				<div class="link" <% if current_page?"files" %> id="active_link" <% end %>> 
+					> Files
 				</div>
 			<% end %>
 		</td></tr>

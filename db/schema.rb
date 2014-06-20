@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620134353) do
+ActiveRecord::Schema.define(version: 20140620155114) do
 
   create_table "carousel_images", force: true do |t|
     t.string   "image_file_name"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20140620134353) do
     t.integer  "video_section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "url"
   end
 
 end

@@ -44,6 +44,7 @@ Mccm::Application.routes.draw do
 	match '/admin_subpages/users', to: 'admins#users', via: 'get'
 	match '/admin_subpages/placeholder', to: 'admins#placeholder', via: 'get'
 	match '/admin_subpages/carouselimages', to: 'admins#carouselimages', via: 'get'
+	match '/admin_subpages/inviteusers', to: 'admins#inviteusers', via: 'get'
 
 	match '/admin_subpages/createnews', to: 'admins#createnews', via: 'get'
 	match '/admin_subpages/editnews', to: 'admins#editnews', via: 'get'
@@ -67,6 +68,8 @@ Mccm::Application.routes.draw do
 	patch '/admin_subpages/editvideo' => "admins#doeditvideo", :as => "admin_editvideo"
 	post '/admin_subpages/createvideo' => "admins#docreatevideo", :as => "admin_createvideo"
 	post '/admin_subpages/videos' => "videos#update", :as => "admin_edit_video_description_page"
+
+	post '/admin_subpages/inviteusers' => "admins#inviteuser", :as => "admin_inviteusers"
 
 	post 'help' => "static_pages#send_feedback", :as => "sendfeedback"
 

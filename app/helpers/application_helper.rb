@@ -45,4 +45,12 @@ module ApplicationHelper
 			return false
 		end
 	end
+
+	def kircapitalize(string)
+		string.slice(0,1).capitalize + string.slice(1..-1)
+	end
+
+	def kirauthor(user)
+		kircapitalize(user.first_name) + " " + kircapitalize(user.last_name)
+	end
 end

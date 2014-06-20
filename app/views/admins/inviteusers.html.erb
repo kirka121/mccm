@@ -1,0 +1,23 @@
+<%= render 'admins/admin_subpages/tophalf' %>
+	<%
+		provide(:title,  " - invite users")
+	%>
+<% if yield_registration_mode == 2 %>
+<table class="information_edit_form">
+		<%= form_for admin_inviteusers_path do |f| %>
+			<tr>
+				<th colspan='2'><h3>Invite a User</h3></th>
+			</tr>
+			<tr>
+				<td class="label">E-Mail:</td>
+				<td class="textfield"><%= f.text_field :email, :placeholder => 'E-Mail Address',:class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td colspan='2' class="button"><%= f.submit "Invite", class: "btn btn-default btn-lg btn-block" %></td>
+			</tr>
+	<% end %>
+</table>
+<% else %>
+	<%= form_error('Registration mode should be set to "E-Mail Invite Only" for this function to operate.') %>
+<% end %>
+<%= render 'admins/admin_subpages/bottomhalf' %>

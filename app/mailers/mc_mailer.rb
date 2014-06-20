@@ -9,8 +9,9 @@ class McMailer < ActionMailer::Base
 		mail(to: DEVELOPEREMAIL, subject: '[MCCM FEEDBACK] ' + name + " - " + email)
 	end
 
-	def invitation(email, name, content)
-
+	def invitation(email, user)
+		@user = user
+		mail(to: email, subject: '[MCCM] Membership Invitation')
 	end
 
 	def verification(user)

@@ -207,6 +207,16 @@ class AdminsController < ApplicationController
 		redirect_to '/admin_subpages/videos'
 	end
 
+	def inviteuser
+		email = params["/admin_subpages/inviteusers"][:email]
+		if McMailer.invitation(email, current_user).deliver
+			flash[:form_success] = "Invitation E-Mail sent to: " + email
+		else
+			flash[:form_errors]  = "E-Mail not sent."
+		end
+		render 'inviteusers'
+	end
+
 	private 
 		def user_params
 			params.require(:user).permit(:first_name, :last_name, :email, :admin_level, :avatar)
