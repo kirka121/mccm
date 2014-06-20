@@ -207,20 +207,20 @@ class AdminsController < ApplicationController
 		redirect_to '/admin_subpages/videos'
 	end
 
-	  private 
-	  def user_params
-	  	params.require(:user).permit(:first_name, :last_name, :email, :admin_level, :avatar)
-	  end
+	private 
+		def user_params
+			params.require(:user).permit(:first_name, :last_name, :email, :admin_level, :avatar)
+		end
 
-	   def user_params_withpw
-	  	params.require(:user).permit(:first_name, :last_name, :email, :admin_level,  :avatar, :password, :password_confirmation)
-	  end
+		def user_params_withpw
+			params.require(:user).permit(:first_name, :last_name, :email, :admin_level,  :avatar, :password, :password_confirmation)
+		end
 
-	   def video_params
-	  	params.require(:video).permit(:title, :author, :comments, :video_section_id)
-	  end
+		def video_params
+			params.require(:video).permit(:title, :author, :comments, :video_section_id)
+		end
 
-	  def validate_everything
-	  	
-	  end
+		def validate_everything
+			
+		end
 end
