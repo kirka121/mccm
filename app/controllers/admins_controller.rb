@@ -39,7 +39,7 @@ class AdminsController < ApplicationController
 	def carouselimages
 		@user = current_user
 
-		@allimages = CarouselImage.all
+		@allimages = CarouselImage.paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def createcarouselimage

@@ -20,6 +20,7 @@
 				<td><%= link_to "delete", admin_subpages_deletecarouselimage_path(:id => img.id), method: :delete,
                                   data: { confirm: "You sure?" }%></td>
 			</tr>
+	<%= will_paginate @allimages %>
 	<% end %>
 </table>
 <br/>
