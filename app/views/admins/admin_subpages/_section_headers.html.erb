@@ -1,0 +1,23 @@
+<table class="admin_panel_news_table">
+	<tr>
+		<th>#</th>
+		<th>Title</th>
+		<th>Created At</th>
+		<th>Delete</th>
+	</tr>
+
+	<% sections = yield_video_sections
+		counter = 0
+		sections.each do |n|
+			counter+=1
+	%>
+			<tr>
+				<td><%= counter %></td>
+				<td><%= n.title %></td>
+				<td><%= n.created_at %></td>
+				<td><%= link_to "delete", admin_subpages_deletesection_path(:id => n.id), method: :delete,
+                                  data: { confirm: "You sure?" }%></td>
+			</tr>
+	<% end %>
+</table>
+<br/>

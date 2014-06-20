@@ -1,0 +1,24 @@
+<%= render 'admins/admin_subpages/tophalf' %>
+	<%
+		provide(:title,  " - section create")
+	%>
+<%= render 'admins/admin_subpages/section_headers' %>
+
+<div class="edit_form">
+	<table class="information_edit_form">
+		<%= form_for @createsection,  url: admin_createsection_path  do |f| %>
+			<tr>
+				<th colspan='2'><h3>Create Section</h3></th>
+			</tr>
+			<tr>
+				<td class="label">Title:</td>
+				<td class="textfield"><%= f.text_field :title, :placeholder => "Title", :class => 'register_user_input'  %></td>
+			</tr>
+			<tr>
+				<td colspan='2' class="button"><%= f.submit "Create", class: "btn btn-default btn-lg btn-block"  %> </td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+<%= render 'admins/admin_subpages/bottomhalf' %>

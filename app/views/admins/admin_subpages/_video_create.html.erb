@@ -24,7 +24,10 @@
 			</tr>
 			<tr>
 				<td class="label">Section:</td>
-				<td class="textfield"><%= f.select :video_section_id, options_from_collection_for_select(VideoSection.all, :id, :title), :class => 'register_user_input' %></td>
+				<td class="textfield">
+					<%= f.select :video_section_id, options_from_collection_for_select(VideoSection.all, :id, :title) %>
+					<%= link_to "Add Section", admin_subpages_createsection_path, class: "btn btn-default btn-lg", id: 'addsectionbutton' %>
+				</td>
 			</tr>
 			<tr>
 				<td class="label">YouTube URL:</td>

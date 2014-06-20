@@ -111,6 +111,34 @@ class AdminsController < ApplicationController
 		render 'admins/admin_subpages/_video_edit'
 	end
 
+	def createsection
+		@createsection = VideoSection.new
+
+		render 'admins/admin_subpages/_section_create'
+	end
+
+	def docreatesection
+		section  = VideoSection.new
+		section.title= params[:video_section][:title]
+
+		if section.save
+			flash[:form_success] = "Created a section"
+			redirect_to '/admin_subpages/videos'
+		else
+			flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+			section.errors.full_messages.each do |error|
+				flash[:form_errors] += "<li>" + error + "</li>"
+			end
+			flash[:form_errors] += "</ul>"
+			@createsection = VideoSection.new
+			render 'admins/admin_subpages/_section_create' 
+		end
+	end
+
+	def dodeletesection
+
+	end
+
 	def docreateuser
 		@createuser = User.new
 		@users = User.all
