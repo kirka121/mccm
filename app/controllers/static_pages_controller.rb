@@ -25,7 +25,7 @@ class StaticPagesController < ApplicationController
 		name = params["/help"][:name]
 		content = params["/help"][:content]
 
-		if FeedbackMailer.contactus(email,name,content).deliver
+		if McMailer.contactus(email,name,content).deliver
 			flash[:form_success] = "Your E-Mail has been sent."
 			render 'help'
 		else

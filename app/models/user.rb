@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	validates :last_name, presence: true, length: { minimum: 2, maximum: 50 }
 	validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 8, maximum: 150 }, format: { with: VALID_EMAIL_REGEX }
 	validates :password, presence: true, length: { minimum: 5, maximum: 50 }
+	validates :avatar, presence: true
 
 	has_secure_password
 	has_attached_file :avatar, :styles => { :medium => "300x300>", :small => "100x100>" }, :url => "/system/users/avatars/:id/:style/:basename.:extension", :default_style => :small, :path => ":rails_root/public/system/users/avatars/:id/:style/:basename.:extension", :default_url => "/system/users/avatars/default/:style/missing.png"
