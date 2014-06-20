@@ -53,13 +53,13 @@ end
 	  	end
 	  elsif @@reg_mode == 1
 	  	@user = User.new(user_params) #not final
-	  	@user.needs_activation = true
+	  	@user.needs_activation = 1
 	  	@user.activation_key = generate_activation_key
 
 	  	if @user.save
 	  		McMailer.verification(@user).deliver
-	  		flash[:form_alert] = "You have registered, however you are required to activate your account to log in. Please check your email and follow the instructions within it."
-		  	redirect_to register_path
+	  		flash[:form_warning] = "You have registered, however you are required to activate your account to log in. Please check your email and follow the instructions within it."
+		  	redirect_to '/signin'
 		end
 	  end
   end

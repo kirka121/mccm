@@ -30,6 +30,7 @@ Mccm::Application.routes.draw do
 	match '/register', 	      to: 'users#new', 			             via: 'get'
 	match '/signin',          to: 'sessions#new',                via: 'get'
 	match '/signout',         to: 'sessions#destroy',            via: 'delete'
+	match '/verify', 		to: 'static_pages#verifyaccount', via: 'get'
 
 	match '/admin_subpages/', to: 'admins#index',   via: 'get'
 	match '/admin_subpages/index', to: 'admins#index', via: 'get'

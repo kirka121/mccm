@@ -5,14 +5,20 @@ class SessionsController < ApplicationController
 
 	def create
 		user = User.find_by(email: params[:session][:email])
-		
-		if user && user.authenticate(params[:session][:password])
-			sign_in user
-			flash[:form_success] = "Login successful."
-			redirect_to user
+
+		if user.activation_key.to_s != "activated" && user.needs_activation == 1
+			flash[:form_warning] == flash[:form_warning] = "You have registered, however you are required to activate your account to log in. Please check your email and follow the instructions within it."
+		  	render 'new'
+		  	return
 		else
-			flash.now[:form_errors] = "Login failed."
-			render 'new'
+			if user && user.authenticate(params[:session][:password])
+				sign_in user
+				flash[:form_success] = "Login successful." + user.needs_activation.to_s + " | " + user.activation_key.to_s
+				redirect_to user
+			else
+				flash.now[:form_errors] = "Login failed."
+				render 'new'
+			end
 		end
 	end
 

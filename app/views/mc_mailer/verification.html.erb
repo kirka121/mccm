@@ -7,8 +7,9 @@
 		<h1>MCCM Registration - Verification Required</h1>
 
 		<p>please verify your account by following this link :<br/>
-		<%= @key %>
-
+		<%= "http://"+SERVERURL+"/verify?id="+@key.to_s+"&usr="+@userid.to_s %>
+		<br/>
+		<br/>
 		good day
 		</p>
 	</body>
