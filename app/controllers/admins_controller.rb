@@ -136,7 +136,15 @@ class AdminsController < ApplicationController
 	end
 
 	def dodeletesection
+		section = VideoSection.find_by_id(params[:id])
 
+		if section.destroy
+			flash[:form_success] = "Section deleted"
+			redirect_to '/admin_subpages/createsection'
+		else
+			flash[:form_errors] = "Section did not get deleted"
+			render 'admins/admin_subpages/_section_create'
+		end
 	end
 
 	def docreateuser
