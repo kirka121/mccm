@@ -20,9 +20,9 @@
 				<td><%= v.author %></td>
 				<td><%= v.video_section.title %></td>
 				<td><%= v.created_at %></td>
-				<td><%= link_to "edit", admin_subpages_editvideo_path(id: v.id)%></td>
+				<td><%= link_to "edit", admin_subpages_staticpages_editvideo_path(id: v.id)%></td>
 
-				<td><%= link_to "delete", admin_subpages_deletevideo_path(id: v.id), method: :delete,
+				<td><%= link_to "delete", admin_subpages_staticpages_deletevideo_path(id: v.id), method: :delete,
                                   data: { confirm: "You sure?" }%></td>
 			</tr>
 	<% end %>

@@ -44,7 +44,7 @@
 		</td>
 		<td>
 			<%= link_to admin_subpages_staticpages_path do %>
-				<div <% if controller?("admins") && action?("staticpages") %> id="active" <% end %>> 
+				<div <% if (controller?("admins") && action?("staticpages")) || controller?("adminsstaticpages") %> id="active" <% end %>> 
 					Custom Pages
 				</div>
 			<% end %>

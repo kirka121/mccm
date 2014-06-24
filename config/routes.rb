@@ -68,16 +68,17 @@ Mccm::Application.routes.draw do
 	post '/admin_subpages/createcarouselimage' => "admins#docreatecarouselimage", :as => "admin_createcarouselimage"
 	post '/carousel_images/new' => "carousel_images#new", :as => "carousel_new_add"
 
-	match '/admin_subpages/createvideo', to: 'admins#createvideo', via: 'get'
-	match '/admin_subpages/editvideo', to: 'admins#editvideo', via: 'get'
-	match '/admin_subpages/deletevideo', to: 'admins#dodeletevideo', 	via: 'delete'
+	match '/admin_subpages/staticpages/createvideo', to: 'adminsstaticpages#createvideo', via: 'get'
+	match '/admin_subpages/staticpages/editvideo', to: 'adminsstaticpages#editvideo', via: 'get'
+	match '/admin_subpages/staticpages/deletevideo', to: 'adminsstaticpages#dodeletevideo', 	via: 'delete'
+	patch '/admin_subpages/staticpages/editvideo' => "adminsstaticpages#doeditvideo", :as => "admin_editvideo"
+	post '/admin_subpages/staticpages/createvideo' => "adminsstaticpages#docreatevideo", :as => "admin_createvideo"
 
 	match '/admin_subpages/createsection', to: 'admins#createsection', via: 'get'
 	match '/admin_subpages/deletesection', to: 'admins#dodeletesection', 	via: 'delete'
 	post '/admin_subpages/createsection' => "admins#docreatesection", :as => "admin_createsection"
 
-	patch '/admin_subpages/editvideo' => "admins#doeditvideo", :as => "admin_editvideo"
-	post '/admin_subpages/createvideo' => "admins#docreatevideo", :as => "admin_createvideo"
+
 	post '/admin_subpages/videos' => "videos#update", :as => "admin_edit_video_description_page"
 
 	post '/admin_subpages/inviteusers' => "admins#inviteuser", :as => "admin_inviteusers"

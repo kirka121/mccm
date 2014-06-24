@@ -27,7 +27,7 @@ title = yield(:title)
 			          	<li <%= "class=active" if controller?("users") && action?("new") %>><%= link_to "Register", register_path %></li>
 			          	<li <%= "class=active" if controller?("static_pages") && action?("help") %>><%= link_to "Contact Us", help_path %></li>
                   <% if signed_in? %>
-			          	  <li <%= "class=active" if (controller?("users")&& action?("show", "edit", "email", "files") || controller?("admins"))  %> style="float: right;"><%= link_to "Control Panel", current_user %></li>
+			          	  <li <%= "class=active" if (controller?("users")&& action?("show", "edit", "email", "files") || controller?("admins") || controller?("adminsstaticpages"))  %> style="float: right;"><%= link_to "Control Panel", current_user %></li>
                   <% else %>
                     <li <%= "class=active" if title=="Login" %> style="float: right;"><%= link_to "Login", signin_path %></li>
                   <% end %>

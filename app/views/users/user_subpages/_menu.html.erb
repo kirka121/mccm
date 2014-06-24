@@ -41,7 +41,7 @@ title = yield(:title)
 		<% if current_user.admin_level == 1 %>
 			<tr><td colspan="100%">
 				<%= link_to "/admin_subpages/index", :class => 'inner_link' do %>
-					<div class="link" <% if controller?("admins") %> id="active_link" <% end %>> 
+					<div class="link" <% if controller?("admins")  || controller?("adminsstaticpages")%> id="active_link" <% end %>> 
 						> Admin Panel 
 					</div>
 				<% end %>
