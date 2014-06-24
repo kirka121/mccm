@@ -5,5 +5,17 @@
 
 	<%= render 'adminsstaticpages/forms/menu' %>
 
-	this is home
+		<table class="information_edit_form">
+			<%= form_for @homecontent, url: admin_updatehome_path do |f| %>
+				<tr>
+					<th colspan='2'><h3>Update static home content</h3></th>
+				</tr>
+				<tr>
+					<td colspan='2'><%= f.text_area :content, :class => 'ckeditor' %></td>
+				</tr>
+				<tr>
+					<td colspan='2' class="button"><%= f.submit "Update", class: "btn btn-default btn-lg btn-block"  %> </td>
+				</tr>
+			<% end %>
+		</table>
 <%= render 'admins/admin_subpages/bottomhalf' %>

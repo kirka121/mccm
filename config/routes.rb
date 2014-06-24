@@ -38,6 +38,7 @@ Mccm::Application.routes.draw do
 	match '/admin_subpages/staticpages/datasheets', to: 'adminsstaticpages#datasheets', via: 'get'
 	match '/admin_subpages/staticpages/presentations_papers', to: 'adminsstaticpages#presentations_papers', via: 'get'
 	match '/admin_subpages/staticpages/videos', to: 'adminsstaticpages#videos', via: 'get'
+	patch '/admin_subpages/staticpages/home' => "adminsstaticpages#updatehome", :as => "admin_updatehome"
 
 	match '/admin_subpages/', to: 'admins#index',   via: 'get'
 	match '/admin_subpages/index', to: 'admins#index', via: 'get'
@@ -77,8 +78,6 @@ Mccm::Application.routes.draw do
 	match '/admin_subpages/createsection', to: 'admins#createsection', via: 'get'
 	match '/admin_subpages/deletesection', to: 'admins#dodeletesection', 	via: 'delete'
 	post '/admin_subpages/createsection' => "admins#docreatesection", :as => "admin_createsection"
-
-
 	post '/admin_subpages/videos' => "videos#update", :as => "admin_edit_video_description_page"
 
 	post '/admin_subpages/inviteusers' => "admins#inviteuser", :as => "admin_inviteusers"

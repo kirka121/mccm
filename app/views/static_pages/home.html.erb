@@ -1,25 +1,39 @@
 <% provide(:title, "Home - News")%>
 
-<div id="overview_container">
-	<h1>News</h1>
-
-	<% 
-		news = yield_all_news
-		counter = 0
-		news.each do |n|
-			counter+=1
-			iconstring = "icon-number-"
-			slidestring = "slider"
-			iconstring += counter.to_s
-			slidestring+= counter.to_s
-			iconstring += ".png"	
-	%>
-			<div id="overview_header" class="show_hide2" rel="#<%= slidestring %>">
-				<%= n.title %><%= image_tag("arrow-down.png", class: 'arrow') %> <div id="overview_header_title">on: <%= n.created_at %></div>
-			</div>
-			<div id="<%= slidestring %>" class='slider'>
-				<%= n.content.html_safe %>
-			</div>
-			<hr/>
-	<% end %>
+<div class="cp_wholecontainer">
+	<div class="cp_container_left">
+		<table id="menu">
+			<tr>
+				<th class="spacer"></th>
+				<th class="username">Recent News</th>
+			</tr>
+			<%
+					news = yield_all_news
+					counter = 0
+					news.each do |n|
+						counter+=1
+						iconstring = "icon-number-"
+						slidestring = "slider"
+						iconstring += counter.to_s
+						slidestring+= counter.to_s
+						iconstring += ".png"	
+			%>
+			<tr>
+				<td colspan="100%">
+					<div id="overview_header" class="show_hide2" rel="#<%= slidestring %>">
+						<%= n.title %><%= image_tag("arrow-down.png", class: 'arrow') %> <div id="overview_header_title">on: <%= n.created_at %></div>
+					</div>
+					<div id="<%= slidestring %>" class='slider'>
+						<%= n.content.html_safe %>
+					</div>
+				</td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+	<div class="cp_container_right">
+		<%= @home_page_content.to_s.html_safe %>
+	</div>
 </div>
+
+

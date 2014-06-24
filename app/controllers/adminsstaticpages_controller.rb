@@ -1,6 +1,24 @@
 class AdminsstaticpagesController < ApplicationController
 
 	def home
+		@homecontent = StaticPage.find_by(title: 'home')
+	end
+
+	def updatehome
+		homecontent = StaticPage.find_by(title: 'home')
+		homecontent.content = params[:static_page][:content].to_s.html_safe
+
+		if homecontent.save(validate: false)
+			flash[:form_success] = "Home Content has been updated."
+			redirect_to admin_updatehome_path
+		else
+			flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+			homecontent.errors.full_messages.each do |error|
+				flash[:form_errors] += "<li>" + error + "</li>"
+			end
+			flash[:form_errors] += "</ul>"
+			redirect_to admin_updatehome_path
+		end
 
 	end
 

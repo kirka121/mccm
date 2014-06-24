@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
 	def home
+		@home_page_content = StaticPage.find(1).content
 	end
 	
 	def presentations

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624170037) do
+ActiveRecord::Schema.define(version: 20140624190759) do
 
   create_table "carousel_images", force: true do |t|
     t.string   "image_file_name"
@@ -61,6 +61,12 @@ ActiveRecord::Schema.define(version: 20140624170037) do
     t.text     "server_url"
     t.text     "developer_email"
     t.text     "default_from_email"
+  end
+
+  create_table "static_pages", force: true do |t|
+    t.string "title"
+    t.string "author"
+    t.text   "content"
   end
 
   create_table "users", force: true do |t|
