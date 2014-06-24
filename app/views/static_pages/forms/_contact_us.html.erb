@@ -28,6 +28,10 @@ end
 			<td class="textfield"><%= f.text_field :email, value: email, placeholder: "Your E-Mail", :class => 'register_user_input' %></td>
 		</tr>
 		<tr>
+		<td class="label">Project Name:</td>
+			<td class="textfield"><%= f.text_field :proj_name, placeholder: "Project Name", :class => 'register_user_input' %></td>
+		</tr>
+		<tr>
 			<td class="label">Message:</td>
 			<td class="textfield"><%= f.text_area :content, :class => 'ckeditor' %></td></td>
 		</tr>

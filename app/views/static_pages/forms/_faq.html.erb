@@ -1,0 +1,25 @@
+<h3>FAQ </h3>
+
+<% 
+counter = 0
+yield_all_faqs.each do |faq| 
+	counter+=1
+	iconstring = "icon-number-"
+	slidestring = "slider"
+	iconstring += counter.to_s
+	slidestring+= counter.to_s
+	iconstring += ".png"	
+	%>
+
+	<div id="overview_header" class="show_hide2" rel="#<%= slidestring %>">
+		<%= faq.title %><%= image_tag("arrow-down.png", class: 'arrow') %> <div id="overview_header_title">on: <%= faq.created_at %></div>
+	</div>
+	<div id="<%= slidestring %>" class='slider'>
+		<%= faq.question.html_safe %><br/>
+		<%= faq.answer.html_safe %><br/><br/>
+		by: <%= faq.author %>
+	</div>
+	<hr/>
+	
+<% end %>
+<br/>

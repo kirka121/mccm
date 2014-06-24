@@ -2,10 +2,11 @@ class McMailer < ActionMailer::Base
 	default from: Settings.find(1).default_from_email
 	add_template_helper(ApplicationHelper)
 
-	def contactus(email, name, content)
+	def contactus(email, name, content,proj)
 		@name = name
 		@email = email
 		@content = content
+		@proj = proj
 		@url  = 'http://www.mc-cm.com'
 		mail(to: Settings.find(1).developer_email, subject: '[MCCM FEEDBACK] ' + name + " - " + email)
 	end

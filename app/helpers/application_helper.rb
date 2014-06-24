@@ -49,6 +49,11 @@ module ApplicationHelper
  		return @thissettings.moto
  	end
 
+ 	def yield_faq_displaymode
+ 		init
+ 		return @thissettings.display_faq
+ 	end
+
  	def yield_settings
  		init
  		return @thesettings

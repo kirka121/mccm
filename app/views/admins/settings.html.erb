@@ -50,6 +50,10 @@
 				<td class="textfield"><%= f.select :registration_mode, [['Open registration', 0], ['Email confirmation required', 1], ['Email invite only', 2], ['Admin confirmation required', 2]], :class => 'reigster_user_input' %></td>
 			</tr>
 			<tr>
+				<td class="label">Use FAQ:</td>
+				<td class="textfield"><%= f.select :display_faq, [['Yes', 0], ['No', 1]], :class => 'reigster_user_input' %></td>
+			</tr>
+			<tr>
 				<td class="label">Contact Us Mode:</td>
 				<td class="textfield"><%= f.select :contactus_mode, [['Everyone', 0], ['Users only', 1]], :class => 'reigster_user_input' %></td>
 			</tr>
