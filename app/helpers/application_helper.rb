@@ -50,8 +50,17 @@ module ApplicationHelper
  	end
 
  	def yield_settings
- 		return Settings.find(1)
+ 		init
+ 		return @thesettings
  	end
+
+ 	def controller?(*controller)
+	    controller.include?(params[:controller])
+	end
+
+	def action?(*action)
+	    action.include?(params[:action])
+	end
 
  	def current_page?(provider)
 		if request.fullpath.include? provider

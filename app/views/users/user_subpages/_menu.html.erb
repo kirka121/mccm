@@ -8,7 +8,7 @@ title = yield(:title)
 	</tr>
 		<tr><td colspan="100%">
 			<%= link_to "/users/" + current_user.id.to_s, :class => 'inner_link' do %>
-				<div class="link" > 
+				<div class="link" <% if controller?("users") && action?("show") %> id="active_link" <% end %> > 
 					> My Profile 
 				</div>
 			<% end %>
@@ -16,7 +16,7 @@ title = yield(:title)
 
 		<tr><td colspan="100%">
 			<%= link_to edit_user_path(current_user), :class => 'inner_link' do %>
-				<div class="link" <% if current_page?"edit" %> id="active_link" <% end %> > 
+				<div class="link" <% if controller?("users") && action?("edit") %> id="active_link" <% end %> > 
 					> Update Profile 
 				</div>
 			<% end %>
@@ -24,7 +24,7 @@ title = yield(:title)
 
 		<tr><td colspan="100%">
 			<%= link_to "/users/" + current_user.id.to_s + "/email", :class => 'inner_link' do %>
-				<div class="link" <% if current_page?"email" %> id="active_link" <% end %>> 
+				<div class="link" <% if controller?("users") && action?("email") %> id="active_link" <% end %>> 
 					> E-Mail 
 				</div>
 			<% end %>
@@ -32,7 +32,7 @@ title = yield(:title)
 
 		<tr><td colspan="100%">
 			<%= link_to "/users/" + current_user.id.to_s + "/files", :class => 'inner_link' do %>
-				<div class="link" <% if current_page?"files" %> id="active_link" <% end %>> 
+				<div class="link" <% if controller?("users") && action?("files") %> id="active_link" <% end %>> 
 					> Files
 				</div>
 			<% end %>
@@ -41,7 +41,7 @@ title = yield(:title)
 		<% if current_user.admin_level == 1 %>
 			<tr><td colspan="100%">
 				<%= link_to "/admin_subpages/index", :class => 'inner_link' do %>
-					<div class="link" <% if current_page?"admin_subpages" %> id="active_link" <% end %>> 
+					<div class="link" <% if controller?("admins") %> id="active_link" <% end %>> 
 						> Admin Panel 
 					</div>
 				<% end %>

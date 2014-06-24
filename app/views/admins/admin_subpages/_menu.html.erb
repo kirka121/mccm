@@ -1,50 +1,50 @@
 <table class="admin_panel_links">
 	<tr>
 		<td>
-			<%= link_to "/admin_subpages/index" do %>
-				<div <% if current_page?('index') %> id="active" <% end %>> 
+			<%= link_to admin_subpages_index_path do %>
+				<div <% if controller?("admins") && action?("index") %> id="active" <% end %>> 
 					Status
 				</div>
 			<% end %>
 		</td>
 		<td>
-			<%= link_to "/admin_subpages/settings" do %>
-				<div <% if current_page?('settings') %> id="active" <% end %>>
+			<%= link_to admin_subpages_settings_path do %>
+				<div <% if controller?("admins") && action?("settings") %> id="active" <% end %>>
 					Web Settings
 				</div>
 			<% end %>
 		</td>
 		<td>
-			<%= link_to "/admin_subpages/news" do %>
-				<div <% if current_page?('news') %> id="active" <% end %>> 
+			<%= link_to admin_subpages_news_path do %>
+				<div <% if controller?("admins") && action?("news", "editnews", "createnews") %> id="active" <% end %>> 
 					News
 				</div>
 			<% end %>
 		</td>
 		<td>
-			<%= link_to "/admin_subpages/users" do %>
-				<div <% if current_page?('users') %> id="active" <% end %>> 
+			<%= link_to admin_subpages_users_path do %>
+				<div <% if controller?("admins") && action?("users", "createuser", "edituser") %> id="active" <% end %>> 
 					Manage Users
 				</div>
 			<% end %>
 		</td>
 		<td>
-			<%= link_to "/admin_subpages/inviteusers" do %>
-				<div <% if current_page?('inviteusers') %> id="active" <% end %>> 
+			<%= link_to admin_subpages_inviteusers_path do %>
+				<div <% if controller?("admins") && action?("inviteusers") %> id="active" <% end %>> 
 					Invite Users
 				</div>
 			<% end %>
 		</td>
 		<td>
-			<%= link_to "/admin_subpages/carouselimages" do %>
-				<div <% if current_page?('carouselimages') %> id="active" <% end %>> 
+			<%= link_to admin_subpages_carouselimages_path do %>
+				<div <% if controller?("admins") && action?("carouselimages") %> id="active" <% end %>> 
 					Carousel Images
 				</div>
 			<% end %>
 		</td>
 		<td>
 			<%= link_to admin_subpages_staticpages_path do %>
-				<div <% if current_page?('staticpages') %> id="active" <% end %>> 
+				<div <% if controller?("admins") && action?("staticpages") %> id="active" <% end %>> 
 					Custom Pages
 				</div>
 			<% end %>

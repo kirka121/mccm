@@ -14,9 +14,8 @@ class CarouselImagesController < ApplicationController
 
 	def new
 		@carousel = CarouselImage.create(carousel_params)
-		@allimages = CarouselImage.all
-		#@carousel = CarouselImage.new
-		#@carousel.attributes = carousel_params
+		@allimages = CarouselImage.paginate(:page => params[:page], :per_page => 5)
+
 
 		if(@carousel.save)
 			flash.now[:form_success] = "The image has been saved."

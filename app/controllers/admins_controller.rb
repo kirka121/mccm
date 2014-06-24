@@ -41,26 +41,25 @@ class AdminsController < ApplicationController
 	end
 	def carouselimages
 		@user = current_user
-
-		@allimages = CarouselImage.paginate(:page => params[:page], :per_page => 10)
+		@allimages = CarouselImage.paginate(:page => params[:page], :per_page => 5)
 	end
 
 	def createcarouselimage
-		@allimages = CarouselImage.all
+		@allimages = CarouselImage.paginate(:page => params[:page], :per_page => 5)
 		@carousel = CarouselImage.new
 		render '/admins/admin_subpages/_carousel_create'
 	end
 
 	def editcarouselimage
-		@allimages = CarouselImage.all
+		@allimages = CarouselImage.paginate(:page => params[:page], :per_page => 5)
 		@carousel = CarouselImage.new
 		render '/admins/admin_subpages/_carousel_edit'
 	end
 
 	def dodeletecarouselimage
-		@allimages = CarouselImage.all
+		@allimages = CarouselImage.paginate(:page => params[:page], :per_page => 5)
 		@carousel  = CarouselImage.find_by_id(params[:id])
-		 if @carousel .destroy
+		 if @carousel.destroy
 			flash.now[:form_success] = "Image deleted"
 		else
 			flash.now[:form_errors] = "Image wasn't deleted"
