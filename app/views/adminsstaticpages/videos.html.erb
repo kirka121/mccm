@@ -1,8 +1,11 @@
 <%= render 'admins/admin_subpages/tophalf' %>
 	<%
-		provide(:title,  " - videos")
+		provide(:title,  " - static pages - videos")
 	%>
-<%= render 'admins/admin_subpages/video_headers' %>
+
+	<%= render 'adminsstaticpages/forms/menu' %>
+
+<%= render 'adminsstaticpages/forms/video_headers' %>
 
 <%= link_to "Create Video", admin_subpages_createvideo_path, class: "btn btn-default btn-lg btn-block" %>
 

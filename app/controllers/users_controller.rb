@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
 @@reg_mode = Settings.find(1).registration_mode
 
-
 def index
 	if current_user != nil
 		@user = current_user
@@ -17,6 +16,8 @@ end
 
   def new
   	@user = User.new
+
+  	@test = 'kirka'
   end
 
   def show
@@ -33,9 +34,11 @@ end
   end
 
   def create
+  	@@reg_mode = Settings.find(1).registration_mode
+
   	if @@reg_mode == 0
 	  	@user = User.new(user_params)
-	  	@user.needsactivation = 0
+	  	@user.needs_activation = 0
 	  	@user.activation_key = 'activated'
 
 	  	if @user.save
@@ -51,7 +54,7 @@ end
 
 	  		render 'new'
 	  	end
-	  elsif @@reg_mode == 1
+	elsif @@reg_mode == 1
 	  	@user = User.new(user_params)
 	  	@user.needs_activation = 1
 	  	@user.activation_key = generate_activation_key
@@ -60,8 +63,16 @@ end
 	  		McMailer.verification(@user).deliver
 	  		flash[:form_warning] = "You have registered, however you are required to activate your account to log in. Please check your email and follow the instructions within it."
 		  	redirect_to '/signin'
+		else
+			flash[:form_errors] = "Failure. Some parameters are invalid: <ul>"
+	  		@user.errors.full_messages.each do |error|
+	  			flash[:form_errors] += "<li>" + error + "</li>"
+	  		end
+	  		flash[:form_errors] += "</ul>"
+
+	  		render 'new'
 		end
-	  elsif @@reg_mode == 2
+	elsif @@reg_mode == 2
 	  	@user = User.new(user_params)
 	  	@user.needs_activation = 0
 	  	@user.activation_key = 'activated'
@@ -81,8 +92,7 @@ end
 
 	  		render 'new'
 	  	end
-			
-	  end
+	end
   end
 
   def edit

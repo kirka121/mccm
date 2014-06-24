@@ -1,0 +1,9 @@
+<%= render 'admins/admin_subpages/tophalf' %>
+	<%
+		provide(:title,  " - static pages")
+	%>
+
+	<%= render 'adminsstaticpages/forms/menu' %>
+
+	<%= link_to "Create a Static Page", "/admin_subpages/createstaticpage", class: "btn btn-default btn-lg btn-block" %>
+<%= render 'admins/admin_subpages/bottomhalf' %>

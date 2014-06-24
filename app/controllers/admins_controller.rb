@@ -1,6 +1,5 @@
 class AdminsController < ApplicationController
 	before_action :validate_everything, only: [:createnews, :editnews, :createuser, :edituser,  :createvideo, :editvideo,  :docreateuser, :doedituser, :dodeleteuser, :docreatevideo, :doeditvideo] 
-
 	def index
 		@user = current_user
 	end
@@ -36,6 +35,10 @@ class AdminsController < ApplicationController
 	def placeholder
 		@user = current_user
 	end	
+
+	def staticpages
+		@user = current_user
+	end
 	def carouselimages
 		@user = current_user
 

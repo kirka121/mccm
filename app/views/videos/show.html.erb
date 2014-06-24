@@ -5,11 +5,11 @@
 		<%= render 'videos/menu' %>
 	</div>
 	<div class="cp_container_right">
-			<%= @video.title %><br/>
-			<%= @video.author %><br/>
-			<%= @video.comments %><br/>
-			<%= @video.created_at %><br/>
+		<%= @video.title %><br/>
+		<%= @video.author %><br/>
+		<%= @video.comments.to_s.html_safe %><br/>
+		<%= @video.created_at %><br/>
 
-			<%= @video.video_section.title %><br/>
+		<%= @video.video_section.title %><br/>
 	</div>
 </div>

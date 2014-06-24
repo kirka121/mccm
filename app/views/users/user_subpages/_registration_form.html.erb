@@ -16,7 +16,9 @@
 			<td class="label">Last Name:</td>
 			<td class="textfield"><%= f.text_field(:last_name, :placeholder => "Last Name", :class => 'register_user_input') %></td>
 		</tr>
-		<% if !:thisisaninvite %>
+		<% if :thisisaninvite == 'wearebeinginvited'  %>
+		<%= f.hidden_field :email, value: @user.email.to_s %>
+		<% else %>
 		<tr>
 			<td class="label">E-Mail:</td>
 			<td class="textfield"><%= f.text_field :email, :placeholder => "E-Mail", :class => 'register_user_input' %></td>
@@ -38,9 +40,6 @@
 			<td colspan='2' class="button"> <%= f.submit "Create my account", class: "btn btn-default btn-lg btn-block" %> </td>
 		</tr>
 	</table>
-<% if :thisisaninvite %>
-<%= f.hidden_field :email, value: @user.email.to_s %>
-<% end %>
 <% if :inviteid %>
 <%= f.hidden_field :theid, value: params[:id] %>
 <% end %>

@@ -1,6 +1,11 @@
 <%= render 'admins/admin_subpages/tophalf' %>
 	<%
-		provide(:title,  " - index")
+		provide(:title,  " - Summary")
 	%>
-	index
+	this shall be the status and summary of all website activity thus far
+	<br/>
+	<br/>
+	<% CURRENTPAGE.each do |p| %>
+			<%= p %>
+	<% end %>
 <%= render 'admins/admin_subpages/bottomhalf' %>

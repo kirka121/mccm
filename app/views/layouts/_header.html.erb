@@ -11,7 +11,7 @@ title = yield(:title)
       				<table id="KA_header_inner_container">
       					<tr>
       						<td id="header_logo_container"><%= link_to image_tag("logo.png",width: '250'), '/', id: "logo" %></td>
-      						<td id="header_content">Global EW Solutions by<br><span id="header_content_description">MC Countermeasures Inc.</span></td>
+      						<td id="header_content"><%= yield_website_settings_moto.to_s.html_safe %></span></td>
       					</tr>
       				</table>
       			</td>
@@ -20,13 +20,12 @@ title = yield(:title)
 	      		<td id="header_container_menu_links">
 	        		<ul class="nav nav-tabs">
 			          	<li <%= "class=active" if title.include?"Home" %>><%= link_to "Home", home_path %></li>
-			          	<li <%= "class=active" if title.include?"Register" %>><%= link_to "Register", register_path %></li>
-			          	<li <%= "class=active" if title.include?"Videos" %>><%= link_to "Videos", videos_path %></li>
-			          	<li <%= "class=active" if title.include?"Results" %>><%= link_to "Results", results_path %></li>
-			          	<li <%= "class=active" if title.include?"Presentations" %>><%= link_to "Presentations", presentations_path %></li>
-			          	<li <%= "class=active" if title.include?"Papers" %>><%= link_to "Papers", papers_path %></li>
-			          	<li <%= "class=active" if title.include?"Help" %>><%= link_to "Help", help_path %></li>
 			          	<li <%= "class=active" if title.include?"About" %>><%= link_to "About", about_path %></li>
+			          	<li <%= "class=active" if title.include?"Data Sheets" %>><%= link_to "Data Sheets", datasheets_path %></li>
+			          	<li <%= "class=active" if title.include?"Presentations" %>><%= link_to "Presentations & Papers", presentations_path %></li>
+			          	<li <%= "class=active" if title.include?"Videos" %>><%= link_to "Videos", videos_path %></li>
+			          	<li <%= "class=active" if title.include?"Register" %>><%= link_to "Register", register_path %></li>
+			          	<li <%= "class=active" if title.include?"Help" %>><%= link_to "Contact Us", help_path %></li>
                   <% if signed_in? %>
 			          	  <li <%= "class=active" if title.include?("Control Panel") %> style="float: right;"><%= link_to "Control Panel", current_user %></li>
                   <% else %>

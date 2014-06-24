@@ -3,25 +3,27 @@
 <div class="cp_wholecontainer">
 	<div class="cp_container_left">
 		<% 
-			sections = VideoSection.all
-			sections.each do |sec| 
+			if VideoSection.count > 0 do
+				sections = VideoSection.all 
+				sections.each do |sec| 
 		%>
-			<table id="menu">
-				<tr>
-					<th class="spacer"></th>
-					<th class="username"><%= sec.title %></th>
-				</tr>
-				<% sec.videos.each do |vid| %>
-					<tr><td colspan="100%">
-						<%= link_to "/Videos/" + vid.id.to_s, :class => 'inner_link' do %>
-							<div class="link" <% if (@page != nil && @page=='profile') %> id="active_link" <% end %> > 
-								> <%= vid.title %>
-							</div>
-						<% end %>
-					</td></tr>
-				<% end %>
-			</table>
-			<br/>
+				<table id="menu">
+					<tr>
+						<th class="spacer"></th>
+						<th class="username"><%= sec.title %></th>
+					</tr>
+					<% sec.videos.each do |vid| %>
+						<tr><td colspan="100%">
+							<%= link_to "/Videos/" + vid.id.to_s, :class => 'inner_link' do %>
+								<div class="link" <% if (@page != nil && @page=='profile') %> id="active_link" <% end %> > 
+									> <%= vid.title %>
+								</div>
+							<% end %>
+						</td></tr>
+					<% end %>
+				</table>
+				<br/>
+			<% end %>
 		<% end %>
 	</div>
 	<div class="cp_container_right">

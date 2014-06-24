@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
 	def presentations
 	end
 
-	def papers
+	def datasheets
 	end
 
 	def results
@@ -53,7 +53,7 @@ class StaticPagesController < ApplicationController
 				@theuser.activation_key = 'activated'
 				@theuser.email = theinvite.email
 				@result = 'success'
-				render 'users/new', locals: {thisisaninvite: true, :inviteid =>  theinvite.id.to_s}
+				render 'users/new', locals: {thisisaninvite: "wearebeinginvited", :inviteid =>  theinvite.id.to_s}
 			end
 		end
 		

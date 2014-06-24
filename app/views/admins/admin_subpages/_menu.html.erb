@@ -1,13 +1,19 @@
 <table class="admin_panel_links">
 	<tr>
 		<td>
-			<%= link_to "/admin_subpages/settings" do %>
-				<div <% if current_page?('settings') %> id="active" <% end %>>
-					Settings
+			<%= link_to "/admin_subpages/index" do %>
+				<div <% if current_page?('index') %> id="active" <% end %>> 
+					Status
 				</div>
 			<% end %>
 		</td>
-
+		<td>
+			<%= link_to "/admin_subpages/settings" do %>
+				<div <% if current_page?('settings') %> id="active" <% end %>>
+					Web Settings
+				</div>
+			<% end %>
+		</td>
 		<td>
 			<%= link_to "/admin_subpages/news" do %>
 				<div <% if current_page?('news') %> id="active" <% end %>> 
@@ -15,67 +21,13 @@
 				</div>
 			<% end %>
 		</td>
-
-		<td>
-			<%= link_to "/admin_subpages/videos" do %>
-				<div <% if current_page?('videos') %> id="active" <% end %>> 
-					Videos
-				</div>
-			<% end %>
-		</td>
-
-		<td>
-			<%= link_to "/admin_subpages/results" do %>
-				<div <% if current_page?('results') %> id="active" <% end %>> 
-					Results
-				</div>
-			<% end %>
-		</td>
-
-		<td>
-			<%= link_to "/admin_subpages/presentations" do %>
-				<div <% if current_page?('presentations') %> id="active" <% end %>> 
-					Presentations
-				</div>
-			<% end %>
-		</td>
-
-		<td>
-			<%= link_to "/admin_subpages/help" do %>
-				<div <% if current_page?('help') %> id="active" <% end %>> 
-					Help
-				</div>
-			<% end %>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="100%"><hr/></td>
-	</tr>
-	<tr>
-		<td>
-			<%= link_to "/admin_subpages/about" do %>
-				<div <% if current_page?('about') %> id="active" <% end %>> 
-					About
-				</div>
-			<% end %>
-		</td>
-
 		<td>
 			<%= link_to "/admin_subpages/users" do %>
 				<div <% if current_page?('users') %> id="active" <% end %>> 
-					Users
+					Manage Users
 				</div>
 			<% end %>
 		</td>
-
-		<td>
-			<%= link_to "/admin_subpages/carouselimages" do %>
-				<div <% if current_page?('carouselimages') %> id="active" <% end %>> 
-					Carousel Images
-				</div>
-			<% end %>
-		</td>
-
 		<td>
 			<%= link_to "/admin_subpages/inviteusers" do %>
 				<div <% if current_page?('inviteusers') %> id="active" <% end %>> 
@@ -83,19 +35,17 @@
 				</div>
 			<% end %>
 		</td>
-
 		<td>
-			<%= link_to "/admin_subpages/placeholder" do %>
-				<div <% if current_page?('placeholder') %> id="active" <% end %>> 
-					placeholder
+			<%= link_to "/admin_subpages/carouselimages" do %>
+				<div <% if current_page?('carouselimages') %> id="active" <% end %>> 
+					Carousel Images
 				</div>
 			<% end %>
 		</td>
-
 		<td>
-			<%= link_to "/admin_subpages/index" do %>
-				<div <% if current_page?('index') %> id="active" <% end %>> 
-					index
+			<%= link_to admin_subpages_staticpages_path do %>
+				<div <% if current_page?('staticpages') %> id="active" <% end %>> 
+					Custom Pages
 				</div>
 			<% end %>
 		</td>

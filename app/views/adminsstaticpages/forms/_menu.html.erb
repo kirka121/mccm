@@ -1,0 +1,79 @@
+<table class="admin_panel_links">
+	<tr>
+		<td>
+			<%= link_to admin_subpages_staticpages_home_path do %>
+				<div <% if current_page?('settings') %> id="active" <% end %>>
+					Home
+				</div>
+			<% end %>
+		</td>
+
+		<td>
+			<%= link_to admin_subpages_staticpages_about_path do %>
+				<div <% if current_page?('news') %> id="active" <% end %>> 
+					About
+				</div>
+			<% end %>
+		</td>
+
+		<td>
+			<%= link_to admin_subpages_staticpages_datasheets_path do %>
+				<div <% if current_page?('videos') %> id="active" <% end %>> 
+					Data Sheets
+				</div>
+			<% end %>
+		</td>
+
+		<td>
+			<%= link_to admin_subpages_staticpages_presentations_papers_path do %>
+				<div <% if current_page?('results') %> id="active" <% end %>> 
+					Presentations & Papers
+				</div>
+			<% end %>
+		</td>
+
+		<td>
+			<%= link_to admin_subpages_staticpages_videos_path do %>
+				<div <% if current_page?('presentations') %> id="active" <% end %>> 
+					Videos
+				</div>
+			<% end %>
+		</td>
+	</tr>
+</table>
+
+<br/>
+
+
+
+
+<!--
+<table class="admin_panel_news_table">
+	<tr>
+		<th>#</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Created At</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+
+	<% videos = yield_all_videos
+		counter = 0
+		videos.each do |v|
+			counter+=1
+	%>
+			<tr>
+				<td><%= counter %></td>
+				<td><%= v.title %></td>
+				<td><%= v.author %></td>
+				<td><%= v.created_at %></td>
+				<td><%= link_to "edit", admin_subpages_editvideo_path(id: v.id)%></td>
+
+				<td><%= link_to "delete", admin_subpages_deletevideo_path(id: v.id), method: :delete,
+                                  data: { confirm: "You sure?" }%></td>
+			</tr>
+	<% end %>
+</table>
+<br/>
+-->

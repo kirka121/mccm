@@ -27,7 +27,7 @@ class SettingsController < ApplicationController
 
 	private 
 		def settings_params
-			params.require(:settings).permit(:title, :copyright, :carousel_mode, :registration_mode, :contactus_mode)
+			params.require(:settings).permit(:title, :copyright, :carousel_mode, :registration_mode, :contactus_mode, :moto, :admin_email)
 		end
 
 		def is_admin?

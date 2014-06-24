@@ -54,3 +54,26 @@
 -------
 -- login logout functionality
 -- full error reporting
+
+
+-- accept / decline invatations to register by admin only
+-- send mass email on placeholder (options, all specific users)
+-- google search bot optimization, we need google bots to see all pdf content no problem, index no problem
+-- when uploading files, public - everyone / internal - only mccm staff + admins / private - only who we specify (from the whole world)
+
+
+
+staff 
+	- can send invitation to register
+	- can send private / public / internal files
+	- upload files
+	- answer contact us emails
+
+contact us form
+	- add project name
+
+remove faq
+replace help with contact us
+
+
+home / about / data sheets / presentations & papers / videos / registration / contact us / 

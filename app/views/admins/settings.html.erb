@@ -22,6 +22,14 @@
 				<td class="textfield"><%= f.text_field :copyright, :placeholder => "Copyright", :class => 'register_user_input' %></td>
 			</tr>
 			<tr>
+				<td class="label">Moto:</td>
+				<td class="textfield"><%= f.text_field :moto, :placeholder => "Moto (top right corner)", :class => 'register_user_input' %></td>
+			</tr>
+			<tr>
+				<td class="label">Admin Email: </td>
+				<td class="textfield"><%= f.text_field :admin_email, placeholder: "Admin Contact Email", class: 'register_user_input' %></td>
+			</tr>
+			<tr>
 				<td class="label">Carousel Mode:</td>
 				<td class="textfield"><%= f.select :carousel_mode, [['Always ON', 0], ['Always OFF', 1], ['Home page ONLY', 2]], :class => 'reigster_user_input' %></td>
 			</tr>

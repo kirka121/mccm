@@ -1,21 +1,22 @@
 <% 
-	sections = VideoSection.all
-	sections.each do |sec| 
+	if sections = yield_videosections
+		sections.each do |sec| 
 %>
-	<table id="menu">
-		<tr>
-			<th class="spacer"></th>
-			<th class="username"><%= sec.title %></th>
-		</tr>
-		<% sec.videos.each do |vid| %>
-			<tr><td colspan="100%">
-				<%= link_to "/videos/" + vid.id.to_s, :class => 'inner_link' do %>
-					<div class="link" <% if (params[:id].to_s == vid.id.to_s) %> id="active_link" <% end %> > 
-						> <%= vid.title %>
-					</div>
-				<% end %>
-			</td></tr>
-		<% end %>
-	</table>
+		<table id="menu">
+			<tr>
+				<th class="spacer"></th>
+				<th class="username"><%= sec.title %></th>
+			</tr>
+			<% sec.videos.each do |vid| %>
+				<tr><td colspan="100%">
+					<%= link_to "/videos/" + vid.id.to_s, :class => 'inner_link' do %>
+						<div class="link" <% if (params[:id].to_s == vid.id.to_s) %> id="active_link" <% end %> > 
+							> <%= vid.title %>
+						</div>
+					<% end %>
+				</td></tr>
+			<% end %>
+		</table>
 	<br/>
+	<% end %>
 <% end %>

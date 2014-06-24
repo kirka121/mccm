@@ -22,7 +22,7 @@ Mccm::Application.routes.draw do
 	end
 
 	match '/presentations',		to: 'static_pages#presentations',	 via: 'get'
-	match '/papers',		      to: 'static_pages#papers',	       via: 'get'	
+	match '/datasheets',		      to: 'static_pages#datasheets',	       via: 'get'	
 	match '/results',		      to: 'static_pages#results',	       via: 'get'
 	match '/help', 		        to: 'static_pages#help', 	         via: 'get'
 	match '/about', 		      to: 'static_pages#about', 	       via: 'get'
@@ -32,6 +32,12 @@ Mccm::Application.routes.draw do
 	match '/signout',         to: 'sessions#destroy',            via: 'delete'
 	match '/verify', 		to: 'static_pages#verifyaccount', via: 'get'
 	match '/invited', to: 'static_pages#inviteaccount', via: 'get'
+	match 'admin_subpages/staticpages', to: 'admins#staticpages', via: 'get'
+	match '/admin_subpages/staticpages/home', to: 'adminsstaticpages#home', via: 'get'
+	match '/admin_subpages/staticpages/about', to: 'adminsstaticpages#about', via: 'get'
+	match '/admin_subpages/staticpages/datasheets', to: 'adminsstaticpages#datasheets', via: 'get'
+	match '/admin_subpages/staticpages/presentations_papers', to: 'adminsstaticpages#presentations_papers', via: 'get'
+	match '/admin_subpages/staticpages/videos', to: 'adminsstaticpages#videos', via: 'get'
 
 	match '/admin_subpages/', to: 'admins#index',   via: 'get'
 	match '/admin_subpages/index', to: 'admins#index', via: 'get'
